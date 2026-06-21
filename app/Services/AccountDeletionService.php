@@ -7,7 +7,6 @@ use App\Models\ContactMessage;
 use App\Models\ProductSubscription;
 use App\Models\User;
 use App\Models\UserAddress;
-use App\Models\UserPaymentMethod;
 use App\Services\AuditLogger;
 use Illuminate\Support\Facades\DB;
 use Laravel\Cashier\Subscription as CashierSubscription;
@@ -102,7 +101,6 @@ class AccountDeletionService
     private function deletePersonalData(int $userId): void
     {
         UserAddress::query()->where('user_id', $userId)->delete();
-        UserPaymentMethod::query()->where('user_id', $userId)->delete();
         ChatLog::query()->where('user_id', $userId)->delete();
     }
 
