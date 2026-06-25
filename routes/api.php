@@ -6,7 +6,6 @@ use App\Http\Controllers\Api\Admin\AdminCategoryController;
 use App\Http\Controllers\Api\Admin\LogController;
 use App\Http\Controllers\Api\Admin\AdminUploadController;
 use App\Http\Controllers\Api\Admin\AdminContactController;
-use App\Http\Controllers\Api\Admin\AdminChatController;
 use App\Http\Controllers\Api\Admin\AdminHomepageController;
 use App\Http\Controllers\Api\Admin\AdminOrderController;
 use App\Http\Controllers\Api\Admin\AdminProductController;
@@ -56,32 +55,29 @@ Route::middleware([LogAudit::class])->group(function () {
         Route::put('/profile', [ProfileController::class, 'update']);
         Route::delete('/profile', [ProfileController::class, 'destroy']);
 
-        Route::get('/billing/setup-intent', [BillingController::class, 'setupIntent']);
-        Route::post('/billing/checkout', [BillingController::class, 'checkout']);
-        Route::post('/billing/checkout/success', [BillingController::class, 'checkoutSuccess']);
-
-        Route::get('/orders', [OrderController::class, 'index']);
-        Route::get('/orders/{id}', [OrderController::class, 'show']);
-        Route::post('/orders', [OrderController::class, 'store']);
-
-        Route::get('/subscriptions', [SubscriptionController::class, 'index']);
-        Route::post('/subscriptions/{id}/cancel', [SubscriptionController::class, 'cancel']);
-        Route::post('/subscriptions/{id}/change-cycle', [SubscriptionController::class, 'changeCycle']);
-
         Route::get('/addresses', [AddressController::class, 'index']);
         Route::post('/addresses', [AddressController::class, 'store']);
         Route::put('/addresses/{id}', [AddressController::class, 'update']);
         Route::delete('/addresses/{id}', [AddressController::class, 'destroy']);
 
-        Route::get('/payment-methods', [PaymentMethodController::class, 'index']);
-        Route::post('/payment-methods', [PaymentMethodController::class, 'store']);
-        Route::post('/payment-methods/{id}/default', [PaymentMethodController::class, 'setDefault']);
-        Route::delete('/payment-methods/{id}', [PaymentMethodController::class, 'destroy']);
-
-        Route::post('/promo-codes/validate', [PromoCodeController::class, 'validate']);
-
         Route::post('/chat', [ChatController::class, 'store']);
-        Route::get('/chat/history', [ChatController::class, 'history']);
+
+        Route::middleware('verified')->group(function () {
+            Route::get('/orders', [OrderController::class, 'index']);
+            Route::get('/orders/{id}', [OrderController::class, 'show']);
+            Route::post('/orders', [OrderController::class, 'store']);
+
+            Route::get('/subscriptions', [SubscriptionController::class, 'index']);
+            Route::post('/subscriptions/{id}/cancel', [SubscriptionController::class, 'cancel']);
+            Route::post('/subscriptions/{id}/change-cycle', [SubscriptionController::class, 'changeCycle']);
+
+            Route::get('/payment-methods', [PaymentMethodController::class, 'index']);
+            Route::post('/payment-methods', [PaymentMethodController::class, 'store']);
+            Route::post('/payment-methods/{id}/default', [PaymentMethodController::class, 'setDefault']);
+            Route::delete('/payment-methods/{id}', [PaymentMethodController::class, 'destroy']);
+
+            Route::post('/promo-codes/validate', [PromoCodeController::class, 'validate']);
+        });
     });
 
     Route::prefix('admin')->middleware(['auth:sanctum', 'active', 'admin'])->group(function () {
@@ -116,7 +112,6 @@ Route::middleware([LogAudit::class])->group(function () {
         Route::delete('/homepage/slides/{id}', [AdminHomepageController::class, 'destroySlide']);
         Route::put('/homepage/content', [AdminHomepageController::class, 'updateContent']);
 
-        Route::get('/chat-logs', [AdminChatController::class, 'index']);
         Route::get('/contact-messages', [AdminContactController::class, 'index']);
         Route::patch('/contact-messages/{id}/status', [AdminContactController::class, 'updateStatus']);
         Route::post('/contact-messages/{id}/reply', [AdminContactController::class, 'reply']);

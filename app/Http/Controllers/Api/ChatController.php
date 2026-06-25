@@ -38,20 +38,6 @@ class ChatController extends Controller
         ], 201);
     }
 
-    public function history(Request $request): JsonResponse
-    {
-        $request->validate([
-            'session_id' => ['required', 'string', 'max:100'],
-        ]);
-
-        $logs = ChatLog::where('user_id', auth()->id())
-            ->where('session_id', $request->session_id)
-            ->orderBy('created_at')
-            ->get(['id', 'user_message', 'bot_response', 'created_at']);
-
-        return response()->json(['data' => $logs]);
-    }
-
     private function generateBotResponse(string $message): string
     {
         $lower = mb_strtolower($message);

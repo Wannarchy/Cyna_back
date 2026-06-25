@@ -261,10 +261,6 @@ class AuditLogger
             return ['upload.image', 'Upload', null];
         }
 
-        if (str_contains($uri, 'chat-logs')) {
-            return [self::verbAction('chat_log', $method), 'ChatLog', null];
-        }
-
         return ['admin.'.strtolower($method), null, $targetId];
     }
 
@@ -303,18 +299,6 @@ class AuditLogger
 
         if (preg_match('#/profile$#', $path)) {
             return [self::verbAction('profile', $method), 'User', $request->user()?->id];
-        }
-
-        if (preg_match('#/billing/checkout/success$#', $path)) {
-            return ['billing.checkout_success', 'Order', null];
-        }
-
-        if (preg_match('#/billing/checkout$#', $path)) {
-            return ['billing.checkout', 'Order', null];
-        }
-
-        if (preg_match('#/billing/setup-intent$#', $path)) {
-            return ['billing.setup_intent', null, null];
         }
 
         if (preg_match('#/billing/config$#', $path)) {
@@ -359,10 +343,6 @@ class AuditLogger
 
         if (preg_match('#/promo-codes/validate$#', $path)) {
             return ['promo_code.validate', 'PromoCode', null];
-        }
-
-        if (preg_match('#/chat/history$#', $path)) {
-            return ['chat.history', 'ChatLog', $request->user()?->id];
         }
 
         if (preg_match('#/chat$#', $path)) {

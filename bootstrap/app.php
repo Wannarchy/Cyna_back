@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\EnsureEmailIsVerified;
 use App\Http\Middleware\EnsureUserIsActive;
 use App\Http\Middleware\IsAdmin;
 use App\Http\Middleware\LogAudit;
@@ -20,6 +21,7 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'admin' => IsAdmin::class,
             'active' => EnsureUserIsActive::class,
+            'verified' => EnsureEmailIsVerified::class,
             'admin.audit' => LogAudit::class,
             'optional.sanctum' => \App\Http\Middleware\OptionalSanctumAuth::class,
         ]);

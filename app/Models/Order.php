@@ -17,6 +17,7 @@ class Order extends Model
         'tax_amount',
         'promo_discount',
         'promo_code',
+        'promo_code_id',
         'billing_name',
         'billing_address',
         'shipping_name',
@@ -41,6 +42,11 @@ class Order extends Model
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function promoCode(): BelongsTo
+    {
+        return $this->belongsTo(PromoCode::class, 'promo_code_id');
     }
 
     public function items(): HasMany

@@ -55,7 +55,7 @@ class OrderController extends Controller
 
         if (! $request->filled('payment_method')) {
             return response()->json([
-                'message' => 'Un moyen de paiement Stripe est requis. Utilisez payment_method ou POST /api/billing/checkout.',
+                'message' => 'Un moyen de paiement Stripe est requis (champ payment_method).',
             ], 422);
         }
 
