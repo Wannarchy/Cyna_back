@@ -2,7 +2,6 @@
 
 namespace Tests\Unit;
 
-use App\Models\PromoCode;
 use App\Notifications\OrderConfirmationNotification;
 use App\Services\OrderFulfillmentService;
 use Illuminate\Foundation\Testing\RefreshDatabase;

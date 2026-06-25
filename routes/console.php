@@ -1,9 +1,10 @@
 <?php
 
-use App\Models\PromoCode;
 use App\Models\ProductSubscription;
+use App\Models\PromoCode;
 use App\Models\User;
 use App\Notifications\RenewalReminderNotification;
+use App\Services\AuditLogger;
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Schedule;
@@ -59,5 +60,5 @@ Schedule::call(function () {
 })->daily()->name('users:purge-expired-email-verification-tokens');
 
 Schedule::call(function () {
-    \App\Services\AuditLogger::purgeExpired();
+    AuditLogger::purgeExpired();
 })->daily()->name('logs:purge-expired');

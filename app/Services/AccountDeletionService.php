@@ -7,7 +7,6 @@ use App\Models\ContactMessage;
 use App\Models\ProductSubscription;
 use App\Models\User;
 use App\Models\UserAddress;
-use App\Services\AuditLogger;
 use Illuminate\Support\Facades\DB;
 use Laravel\Cashier\Subscription as CashierSubscription;
 

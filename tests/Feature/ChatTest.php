@@ -2,7 +2,6 @@
 
 namespace Tests\Feature;
 
-use App\Models\ChatLog;
 use Tests\Concerns\CreatesUsers;
 use Tests\TestCase;
 

@@ -4,6 +4,7 @@ use App\Http\Middleware\EnsureEmailIsVerified;
 use App\Http\Middleware\EnsureUserIsActive;
 use App\Http\Middleware\IsAdmin;
 use App\Http\Middleware\LogAudit;
+use App\Http\Middleware\OptionalSanctumAuth;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -23,7 +24,7 @@ return Application::configure(basePath: dirname(__DIR__))
             'active' => EnsureUserIsActive::class,
             'verified' => EnsureEmailIsVerified::class,
             'admin.audit' => LogAudit::class,
-            'optional.sanctum' => \App\Http\Middleware\OptionalSanctumAuth::class,
+            'optional.sanctum' => OptionalSanctumAuth::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

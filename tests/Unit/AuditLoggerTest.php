@@ -3,7 +3,6 @@
 namespace Tests\Unit;
 
 use App\Models\ActivityLog;
-use App\Models\User;
 use App\Services\AuditLogger;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Http\Request;

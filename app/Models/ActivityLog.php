@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
@@ -74,9 +75,9 @@ class ActivityLog extends Model
         return strtoupper($trimmed);
     }
 
-    protected function details(): \Illuminate\Database\Eloquent\Casts\Attribute
+    protected function details(): Attribute
     {
-        return \Illuminate\Database\Eloquent\Casts\Attribute::make(
+        return Attribute::make(
             get: fn (mixed $value) => self::normalizeDetails($value),
             set: fn (mixed $value) => self::normalizeDetails($value),
         );

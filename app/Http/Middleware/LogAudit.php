@@ -3,9 +3,9 @@
 namespace App\Http\Middleware;
 
 use App\Services\AuditLogger;
-use Illuminate\Support\Facades\Log;
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Symfony\Component\HttpFoundation\Response;
 
 class LogAudit

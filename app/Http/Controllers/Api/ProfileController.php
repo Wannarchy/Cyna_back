@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Requests\DeleteAccountRequest;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\DeleteAccountRequest;
 use App\Http\Resources\UserResource;
 use App\Services\AccountDeletionService;
 use App\Support\PasswordRules;
