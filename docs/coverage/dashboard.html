@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for C:\Users\Joe\Desktop\www\cyna-api\cyna-api\app</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="_css/bootstrap.min.css?v=12.5.7" rel="stylesheet" type="text/css">
+  <link href="_css/billboard.min.css?v=12.5.7" rel="stylesheet" type="text/css">
+  <link href="_css/style.css?v=12.5.7" rel="stylesheet" type="text/css">
+  <link href="_css/custom.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+  <header>
+   <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+       <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="index.html">C:\Users\Joe\Desktop\www\cyna-api\cyna-api\app</a></li>
+         <li class="breadcrumb-item active">(Dashboard)</li>
+
+       </ol>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container-fluid">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classesCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3 style="margin-top: 2rem;">Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Auth/CustomPasswordBrokerManager.php.html#7">App\Auth\CustomPasswordBrokerManager</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Auth/UtilisateurTokenRepository.php.html#11">App\Auth\UtilisateurTokenRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Console/Commands/SyncStripeProducts.php.html#10">App\Console\Commands\SyncStripeProducts</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/AdminUploadController.php.html#10">App\Http\Controllers\Api\Admin\AdminUploadController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/UploadImageRequest.php.html#8">App\Http\Requests\UploadImageRequest</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Notifications/RenewalReminderNotification.php.html#11">App\Notifications\RenewalReminderNotification</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Notifications/ResetPasswordNotification.php.html#10">App\Notifications\ResetPasswordNotification</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/CloudinaryUploadService.php.html#10">App\Services\CloudinaryUploadService</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Notifications/OrderConfirmationNotification.php.html#11">App\Notifications\OrderConfirmationNotification</a></td><td class="text-right">5%</td></tr>
+       <tr><td><a href="Notifications/EmailVerificationNotification.php.html#10">App\Notifications\EmailVerificationNotification</a></td><td class="text-right">8%</td></tr>
+       <tr><td><a href="Mail/ContactReplyMail.php.html#12">App\Mail\ContactReplyMail</a></td><td class="text-right">14%</td></tr>
+       <tr><td><a href="Notifications/AdminLoginOtpNotification.php.html#11">App\Notifications\AdminLoginOtpNotification</a></td><td class="text-right">20%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/OrderController.php.html#13">App\Http\Controllers\Api\OrderController</a></td><td class="text-right">22%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/PaymentMethodController.php.html#9">App\Http\Controllers\Api\PaymentMethodController</a></td><td class="text-right">23%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/AdminUserController.php.html#13">App\Http\Controllers\Api\Admin\AdminUserController</a></td><td class="text-right">26%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/LogController.php.html#11">App\Http\Controllers\Api\Admin\LogController</a></td><td class="text-right">47%</td></tr>
+       <tr><td><a href="Http/Middleware/EnsureUserIsActive.php.html#9">App\Http\Middleware\EnsureUserIsActive</a></td><td class="text-right">50%</td></tr>
+       <tr><td><a href="Http/Middleware/OptionalSanctumAuth.php.html#10">App\Http\Middleware\OptionalSanctumAuth</a></td><td class="text-right">50%</td></tr>
+       <tr><td><a href="Http/Middleware/LogAudit.php.html#11">App\Http\Middleware\LogAudit</a></td><td class="text-right">53%</td></tr>
+       <tr><td><a href="Models/UserAddress.php.html#8">App\Models\UserAddress</a></td><td class="text-right">57%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/SubscriptionController.php.html#14">App\Http\Controllers\Api\SubscriptionController</a></td><td class="text-right">57%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/AuthController.php.html#18">App\Http\Controllers\Api\AuthController</a></td><td class="text-right">61%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/AdminProductController.php.html#13">App\Http\Controllers\Api\Admin\AdminProductController</a></td><td class="text-right">62%</td></tr>
+       <tr><td><a href="Models/ContactMessageReply.php.html#8">App\Models\ContactMessageReply</a></td><td class="text-right">66%</td></tr>
+       <tr><td><a href="Services/AccountDeletionService.php.html#13">App\Services\AccountDeletionService</a></td><td class="text-right">71%</td></tr>
+       <tr><td><a href="Models/ChatLog.php.html#8">App\Models\ChatLog</a></td><td class="text-right">75%</td></tr>
+       <tr><td><a href="Providers/AppServiceProvider.php.html#11">App\Providers\AppServiceProvider</a></td><td class="text-right">75%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/AdminCategoryController.php.html#11">App\Http\Controllers\Api\Admin\AdminCategoryController</a></td><td class="text-right">76%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/AdminContactController.php.html#17">App\Http\Controllers\Api\Admin\AdminContactController</a></td><td class="text-right">76%</td></tr>
+       <tr><td><a href="Rules/ValidPromoCode.php.html#9">App\Rules\ValidPromoCode</a></td><td class="text-right">76%</td></tr>
+       <tr><td><a href="Models/User.php.html#16">App\Models\User</a></td><td class="text-right">77%</td></tr>
+       <tr><td><a href="Models/Order.php.html#9">App\Models\Order</a></td><td class="text-right">80%</td></tr>
+       <tr><td><a href="Models/OrderItem.php.html#8">App\Models\OrderItem</a></td><td class="text-right">80%</td></tr>
+       <tr><td><a href="Models/ProductSubscription.php.html#8">App\Models\ProductSubscription</a></td><td class="text-right">80%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/AddressController.php.html#11">App\Http\Controllers\Api\AddressController</a></td><td class="text-right">82%</td></tr>
+       <tr><td><a href="Services/StripeProductSyncService.php.html#12">App\Services\StripeProductSyncService</a></td><td class="text-right">83%</td></tr>
+       <tr><td><a href="Models/ActivityLog.php.html#9">App\Models\ActivityLog</a></td><td class="text-right">84%</td></tr>
+       <tr><td><a href="Models/Product.php.html#9">App\Models\Product</a></td><td class="text-right">84%</td></tr>
+       <tr><td><a href="Services/AuditLogger.php.html#8">App\Services\AuditLogger</a></td><td class="text-right">85%</td></tr>
+       <tr><td><a href="Models/PromoCode.php.html#8">App\Models\PromoCode</a></td><td class="text-right">85%</td></tr>
+       <tr><td><a href="Services/AdminLoginOtpService.php.html#12">App\Services\AdminLoginOtpService</a></td><td class="text-right">85%</td></tr>
+       <tr><td><a href="Services/OrderFulfillmentService.php.html#15">App\Services\OrderFulfillmentService</a></td><td class="text-right">86%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/AdminPromoCodeController.php.html#11">App\Http\Controllers\Api\Admin\AdminPromoCodeController</a></td><td class="text-right">87%</td></tr>
+       <tr><td><a href="Listeners/StripeWebhookListener.php.html#9">App\Listeners\StripeWebhookListener</a></td><td class="text-right">89%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3 style="margin-top: 2rem;">Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+         <th class="text-right">Complexity</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Auth/UtilisateurTokenRepository.php.html#11">App\Auth\UtilisateurTokenRepository</a></td><td class="text-right">0.0%</td><td class="text-right">13</td><td class="text-right">182</td></tr>
+       <tr><td><a href="Notifications/OrderConfirmationNotification.php.html#11">App\Notifications\OrderConfirmationNotification</a></td><td class="text-right">5.7%</td><td class="text-right">13</td><td class="text-right">154</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/AdminUserController.php.html#13">App\Http\Controllers\Api\Admin\AdminUserController</a></td><td class="text-right">26.3%</td><td class="text-right">16</td><td class="text-right">118</td></tr>
+       <tr><td><a href="Services/AuditLogger.php.html#8">App\Services\AuditLogger</a></td><td class="text-right">85.3%</td><td class="text-right">87</td><td class="text-right">110</td></tr>
+       <tr><td><a href="Http/Controllers/Api/AuthController.php.html#18">App\Http\Controllers\Api\AuthController</a></td><td class="text-right">61.1%</td><td class="text-right">30</td><td class="text-right">82</td></tr>
+       <tr><td><a href="Http/Controllers/Api/OrderController.php.html#13">App\Http\Controllers\Api\OrderController</a></td><td class="text-right">22.8%</td><td class="text-right">11</td><td class="text-right">66</td></tr>
+       <tr><td><a href="Http/Controllers/Api/PaymentMethodController.php.html#9">App\Http\Controllers\Api\PaymentMethodController</a></td><td class="text-right">23.5%</td><td class="text-right">9</td><td class="text-right">45</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/AdminProductController.php.html#13">App\Http\Controllers\Api\Admin\AdminProductController</a></td><td class="text-right">62.7%</td><td class="text-right">21</td><td class="text-right">43</td></tr>
+       <tr><td><a href="Console/Commands/SyncStripeProducts.php.html#10">App\Console\Commands\SyncStripeProducts</a></td><td class="text-right">0.0%</td><td class="text-right">6</td><td class="text-right">42</td></tr>
+       <tr><td><a href="Services/CloudinaryUploadService.php.html#10">App\Services\CloudinaryUploadService</a></td><td class="text-right">0.0%</td><td class="text-right">6</td><td class="text-right">42</td></tr>
+       <tr><td><a href="Services/OrderFulfillmentService.php.html#15">App\Services\OrderFulfillmentService</a></td><td class="text-right">86.9%</td><td class="text-right">38</td><td class="text-right">41</td></tr>
+       <tr><td><a href="Http/Controllers/Api/SubscriptionController.php.html#14">App\Http\Controllers\Api\SubscriptionController</a></td><td class="text-right">58.0%</td><td class="text-right">14</td><td class="text-right">28</td></tr>
+       <tr><td><a href="Http/Controllers/Api/AddressController.php.html#11">App\Http\Controllers\Api\AddressController</a></td><td class="text-right">82.8%</td><td class="text-right">24</td><td class="text-right">26</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/LogController.php.html#11">App\Http\Controllers\Api\Admin\LogController</a></td><td class="text-right">47.2%</td><td class="text-right">10</td><td class="text-right">24</td></tr>
+       <tr><td><a href="Models/User.php.html#16">App\Models\User</a></td><td class="text-right">77.5%</td><td class="text-right">18</td><td class="text-right">21</td></tr>
+       <tr><td><a href="Services/StripeProductSyncService.php.html#12">App\Services\StripeProductSyncService</a></td><td class="text-right">83.8%</td><td class="text-right">18</td><td class="text-right">19</td></tr>
+       <tr><td><a href="Models/ActivityLog.php.html#9">App\Models\ActivityLog</a></td><td class="text-right">84.6%</td><td class="text-right">16</td><td class="text-right">16</td></tr>
+       <tr><td><a href="Services/AccountDeletionService.php.html#13">App\Services\AccountDeletionService</a></td><td class="text-right">71.4%</td><td class="text-right">13</td><td class="text-right">16</td></tr>
+       <tr><td><a href="Listeners/StripeWebhookListener.php.html#9">App\Listeners\StripeWebhookListener</a></td><td class="text-right">89.7%</td><td class="text-right">12</td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/AdminContactController.php.html#17">App\Http\Controllers\Api\Admin\AdminContactController</a></td><td class="text-right">76.1%</td><td class="text-right">10</td><td class="text-right">11</td></tr>
+       <tr><td><a href="Rules/ValidPromoCode.php.html#9">App\Rules\ValidPromoCode</a></td><td class="text-right">76.5%</td><td class="text-right">9</td><td class="text-right">10</td></tr>
+       <tr><td><a href="Notifications/EmailVerificationNotification.php.html#10">App\Notifications\EmailVerificationNotification</a></td><td class="text-right">8.3%</td><td class="text-right">3</td><td class="text-right">9</td></tr>
+       <tr><td><a href="Services/AdminLoginOtpService.php.html#12">App\Services\AdminLoginOtpService</a></td><td class="text-right">85.7%</td><td class="text-right">9</td><td class="text-right">9</td></tr>
+       <tr><td><a href="Http/Middleware/EnsureUserIsActive.php.html#9">App\Http\Middleware\EnsureUserIsActive</a></td><td class="text-right">50.0%</td><td class="text-right">5</td><td class="text-right">8</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/AdminCategoryController.php.html#11">App\Http\Controllers\Api\Admin\AdminCategoryController</a></td><td class="text-right">76.0%</td><td class="text-right">7</td><td class="text-right">7</td></tr>
+       <tr><td><a href="Auth/CustomPasswordBrokerManager.php.html#7">App\Auth\CustomPasswordBrokerManager</a></td><td class="text-right">0.0%</td><td class="text-right">2</td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/AdminPromoCodeController.php.html#11">App\Http\Controllers\Api\Admin\AdminPromoCodeController</a></td><td class="text-right">87.9%</td><td class="text-right">6</td><td class="text-right">6</td></tr>
+       <tr><td><a href="Models/Product.php.html#9">App\Models\Product</a></td><td class="text-right">84.6%</td><td class="text-right">6</td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Middleware/LogAudit.php.html#11">App\Http\Middleware\LogAudit</a></td><td class="text-right">53.8%</td><td class="text-right">4</td><td class="text-right">5</td></tr>
+       <tr><td><a href="Http/Middleware/OptionalSanctumAuth.php.html#10">App\Http\Middleware\OptionalSanctumAuth</a></td><td class="text-right">50.0%</td><td class="text-right">3</td><td class="text-right">4</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2 style="margin-top: 3rem;">Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodsCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3 style="margin-top: 2rem;">Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Auth/CustomPasswordBrokerManager.php.html#9"><abbr title="App\Auth\CustomPasswordBrokerManager::createTokenRepository">createTokenRepository</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Auth/UtilisateurTokenRepository.php.html#13"><abbr title="App\Auth\UtilisateurTokenRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Auth/UtilisateurTokenRepository.php.html#19"><abbr title="App\Auth\UtilisateurTokenRepository::create">create</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Auth/UtilisateurTokenRepository.php.html#33"><abbr title="App\Auth\UtilisateurTokenRepository::exists">exists</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Auth/UtilisateurTokenRepository.php.html#50"><abbr title="App\Auth\UtilisateurTokenRepository::recentlyCreatedToken">recentlyCreatedToken</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Auth/UtilisateurTokenRepository.php.html#65"><abbr title="App\Auth\UtilisateurTokenRepository::delete">delete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Auth/UtilisateurTokenRepository.php.html#75"><abbr title="App\Auth\UtilisateurTokenRepository::deleteExpired">deleteExpired</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Console/Commands/SyncStripeProducts.php.html#17"><abbr title="App\Console\Commands\SyncStripeProducts::handle">handle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/AddressController.php.html#13"><abbr title="App\Http\Controllers\Api\AddressController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/AdminCategoryController.php.html#13"><abbr title="App\Http\Controllers\Api\Admin\AdminCategoryController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/AdminProductController.php.html#19"><abbr title="App\Http\Controllers\Api\Admin\AdminProductController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/AdminPromoCodeController.php.html#13"><abbr title="App\Http\Controllers\Api\Admin\AdminPromoCodeController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/AdminUploadController.php.html#12"><abbr title="App\Http\Controllers\Api\Admin\AdminUploadController::store">store</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/AdminUserController.php.html#15"><abbr title="App\Http\Controllers\Api\Admin\AdminUserController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/AdminUserController.php.html#24"><abbr title="App\Http\Controllers\Api\Admin\AdminUserController::show">show</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/AdminUserController.php.html#37"><abbr title="App\Http\Controllers\Api\Admin\AdminUserController::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/AdminUserController.php.html#72"><abbr title="App\Http\Controllers\Api\Admin\AdminUserController::destroy">destroy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/AuthController.php.html#128"><abbr title="App\Http\Controllers\Api\AuthController::forgotPassword">forgotPassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/AuthController.php.html#139"><abbr title="App\Http\Controllers\Api\AuthController::resetPassword">resetPassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/AuthController.php.html#203"><abbr title="App\Http\Controllers\Api\AuthController::resendVerificationByEmail">resendVerificationByEmail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/AuthController.php.html#223"><abbr title="App\Http\Controllers\Api\AuthController::resendVerification">resendVerification</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/OrderController.php.html#46"><abbr title="App\Http\Controllers\Api\OrderController::store">store</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/SubscriptionController.php.html#20"><abbr title="App\Http\Controllers\Api\SubscriptionController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/UploadImageRequest.php.html#10"><abbr title="App\Http\Requests\UploadImageRequest::authorize">authorize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Requests/UploadImageRequest.php.html#15"><abbr title="App\Http\Requests\UploadImageRequest::rules">rules</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Mail/ContactReplyMail.php.html#21"><abbr title="App\Mail\ContactReplyMail::envelope">envelope</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Mail/ContactReplyMail.php.html#28"><abbr title="App\Mail\ContactReplyMail::content">content</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Models/ChatLog.php.html#27"><abbr title="App\Models\ChatLog::user">user</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Models/ContactMessageReply.php.html#28"><abbr title="App\Models\ContactMessageReply::contactMessage">contactMessage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Models/ContactMessageReply.php.html#33"><abbr title="App\Models\ContactMessageReply::admin">admin</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Models/Order.php.html#47"><abbr title="App\Models\Order::promoCode">promoCode</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Models/Order.php.html#57"><abbr title="App\Models\Order::productSubscriptions">productSubscriptions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Models/OrderItem.php.html#26"><abbr title="App\Models\OrderItem::order">order</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Models/Product.php.html#54"><abbr title="App\Models\Product::orderItems">orderItems</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Models/Product.php.html#59"><abbr title="App\Models\Product::productSubscriptions">productSubscriptions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Models/ProductSubscription.php.html#39"><abbr title="App\Models\ProductSubscription::user">user</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Models/ProductSubscription.php.html#44"><abbr title="App\Models\ProductSubscription::order">order</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Models/PromoCode.php.html#33"><abbr title="App\Models\PromoCode::orders">orders</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Models/User.php.html#57"><abbr title="App\Models\User::getAuthPassword">getAuthPassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Models/User.php.html#116"><abbr title="App\Models\User::getEmailForVerification">getEmailForVerification</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Models/User.php.html#121"><abbr title="App\Models\User::sendPasswordResetNotification">sendPasswordResetNotification</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Models/User.php.html#126"><abbr title="App\Models\User::orders">orders</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Models/User.php.html#131"><abbr title="App\Models\User::productSubscriptions">productSubscriptions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Models/User.php.html#136"><abbr title="App\Models\User::addresses">addresses</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Models/User.php.html#141"><abbr title="App\Models\User::chatLogs">chatLogs</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Models/UserAddress.php.html#37"><abbr title="App\Models\UserAddress::supportsBilling">supportsBilling</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Models/UserAddress.php.html#42"><abbr title="App\Models\UserAddress::supportsShipping">supportsShipping</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Models/UserAddress.php.html#47"><abbr title="App\Models\UserAddress::user">user</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Notifications/AdminLoginOtpNotification.php.html#25"><abbr title="App\Notifications\AdminLoginOtpNotification::toMail">toMail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Notifications/EmailVerificationNotification.php.html#19"><abbr title="App\Notifications\EmailVerificationNotification::toMail">toMail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Notifications/OrderConfirmationNotification.php.html#22"><abbr title="App\Notifications\OrderConfirmationNotification::toMail">toMail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Notifications/OrderConfirmationNotification.php.html#76"><abbr title="App\Notifications\OrderConfirmationNotification::formatMoney">formatMoney</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Notifications/RenewalReminderNotification.php.html#15"><abbr title="App\Notifications\RenewalReminderNotification::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Notifications/RenewalReminderNotification.php.html#17"><abbr title="App\Notifications\RenewalReminderNotification::via">via</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Notifications/RenewalReminderNotification.php.html#22"><abbr title="App\Notifications\RenewalReminderNotification::toMail">toMail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Notifications/ResetPasswordNotification.php.html#16"><abbr title="App\Notifications\ResetPasswordNotification::via">via</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Notifications/ResetPasswordNotification.php.html#21"><abbr title="App\Notifications\ResetPasswordNotification::toMail">toMail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/AuditLogger.php.html#155"><abbr title="App\Services\AuditLogger::purgeExpired">purgeExpired</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/CloudinaryUploadService.php.html#12"><abbr title="App\Services\CloudinaryUploadService::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Services/CloudinaryUploadService.php.html#34"><abbr title="App\Services\CloudinaryUploadService::upload">upload</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/PaymentMethodController.php.html#33"><abbr title="App\Http\Controllers\Api\PaymentMethodController::store">store</abbr></a></td><td class="text-right">14%</td></tr>
+       <tr><td><a href="Services/AccountDeletionService.php.html#74"><abbr title="App\Services\AccountDeletionService::purgeStripeData">purgeStripeData</abbr></a></td><td class="text-right">15%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/PaymentMethodController.php.html#11"><abbr title="App\Http\Controllers\Api\PaymentMethodController::index">index</abbr></a></td><td class="text-right">21%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/AdminProductController.php.html#113"><abbr title="App\Http\Controllers\Api\Admin\AdminProductController::syncWithStripe">syncWithStripe</abbr></a></td><td class="text-right">33%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/PaymentMethodController.php.html#63"><abbr title="App\Http\Controllers\Api\PaymentMethodController::destroy">destroy</abbr></a></td><td class="text-right">37%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/PaymentMethodController.php.html#82"><abbr title="App\Http\Controllers\Api\PaymentMethodController::setDefault">setDefault</abbr></a></td><td class="text-right">37%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/AdminProductController.php.html#95"><abbr title="App\Http\Controllers\Api\Admin\AdminProductController::pricesChanged">pricesChanged</abbr></a></td><td class="text-right">42%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/LogController.php.html#13"><abbr title="App\Http\Controllers\Api\Admin\LogController::index">index</abbr></a></td><td class="text-right">47%</td></tr>
+       <tr><td><a href="Http/Middleware/EnsureUserIsActive.php.html#11"><abbr title="App\Http\Middleware\EnsureUserIsActive::handle">handle</abbr></a></td><td class="text-right">50%</td></tr>
+       <tr><td><a href="Http/Middleware/OptionalSanctumAuth.php.html#12"><abbr title="App\Http\Middleware\OptionalSanctumAuth::handle">handle</abbr></a></td><td class="text-right">50%</td></tr>
+       <tr><td><a href="Http/Requests/StoreCategoryRequest.php.html#52"><abbr title="App\Http\Requests\StoreCategoryRequest::prepareForValidation">prepareForValidation</abbr></a></td><td class="text-right">50%</td></tr>
+       <tr><td><a href="Services/OrderFulfillmentService.php.html#57"><abbr title="App\Services\OrderFulfillmentService::stripePriceId">stripePriceId</abbr></a></td><td class="text-right">50%</td></tr>
+       <tr><td><a href="Services/AccountDeletionService.php.html#47"><abbr title="App\Services\AccountDeletionService::cancelSubscriptions">cancelSubscriptions</abbr></a></td><td class="text-right">52%</td></tr>
+       <tr><td><a href="Http/Middleware/LogAudit.php.html#13"><abbr title="App\Http\Middleware\LogAudit::handle">handle</abbr></a></td><td class="text-right">53%</td></tr>
+       <tr><td><a href="Services/OrderFulfillmentService.php.html#174"><abbr title="App\Services\OrderFulfillmentService::isPromoValid">isPromoValid</abbr></a></td><td class="text-right">55%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/AdminContactController.php.html#19"><abbr title="App\Http\Controllers\Api\Admin\AdminContactController::index">index</abbr></a></td><td class="text-right">56%</td></tr>
+       <tr><td><a href="Models/User.php.html#96"><abbr title="App\Models\User::isEmailVerificationTokenValid">isEmailVerificationTokenValid</abbr></a></td><td class="text-right">60%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/OrderController.php.html#31"><abbr title="App\Http\Controllers\Api\OrderController::show">show</abbr></a></td><td class="text-right">62%</td></tr>
+       <tr><td><a href="Services/StripeProductSyncService.php.html#87"><abbr title="App\Services\StripeProductSyncService::ensureRecurringPrice">ensureRecurringPrice</abbr></a></td><td class="text-right">62%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/SubscriptionController.php.html#63"><abbr title="App\Http\Controllers\Api\SubscriptionController::changeCycle">changeCycle</abbr></a></td><td class="text-right">63%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/SubscriptionController.php.html#32"><abbr title="App\Http\Controllers\Api\SubscriptionController::cancel">cancel</abbr></a></td><td class="text-right">65%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/AdminProductController.php.html#128"><abbr title="App\Http\Controllers\Api\Admin\AdminProductController::buildMessage">buildMessage</abbr></a></td><td class="text-right">66%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/AuthController.php.html#163"><abbr title="App\Http\Controllers\Api\AuthController::verifyEmail">verifyEmail</abbr></a></td><td class="text-right">66%</td></tr>
+       <tr><td><a href="Listeners/StripeWebhookListener.php.html#30"><abbr title="App\Listeners\StripeWebhookListener::asObject">asObject</abbr></a></td><td class="text-right">66%</td></tr>
+       <tr><td><a href="Providers/AppServiceProvider.php.html#13"><abbr title="App\Providers\AppServiceProvider::register">register</abbr></a></td><td class="text-right">66%</td></tr>
+       <tr><td><a href="Services/AuditLogger.php.html#270"><abbr title="App\Services\AuditLogger::resolveApiContext">resolveApiContext</abbr></a></td><td class="text-right">70%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/AdminProductController.php.html#81"><abbr title="App\Http\Controllers\Api\Admin\AdminProductController::sanitizeProductData">sanitizeProductData</abbr></a></td><td class="text-right">75%</td></tr>
+       <tr><td><a href="Http/Requests/StoreProductRequest.php.html#69"><abbr title="App\Http\Requests\StoreProductRequest::prepareForValidation">prepareForValidation</abbr></a></td><td class="text-right">75%</td></tr>
+       <tr><td><a href="Rules/ValidPromoCode.php.html#13"><abbr title="App\Rules\ValidPromoCode::validate">validate</abbr></a></td><td class="text-right">75%</td></tr>
+       <tr><td><a href="Services/AuditLogger.php.html#64"><abbr title="App\Services\AuditLogger::logPageView">logPageView</abbr></a></td><td class="text-right">75%</td></tr>
+       <tr><td><a href="Services/AdminLoginOtpService.php.html#35"><abbr title="App\Services\AdminLoginOtpService::verify">verify</abbr></a></td><td class="text-right">77%</td></tr>
+       <tr><td><a href="Models/ActivityLog.php.html#39"><abbr title="App\Models\ActivityLog::normalizeDetails">normalizeDetails</abbr></a></td><td class="text-right">77%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/AdminProductController.php.html#64"><abbr title="App\Http\Controllers\Api\Admin\AdminProductController::destroy">destroy</abbr></a></td><td class="text-right">80%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/AdminPromoCodeController.php.html#62"><abbr title="App\Http\Controllers\Api\Admin\AdminPromoCodeController::destroy">destroy</abbr></a></td><td class="text-right">80%</td></tr>
+       <tr><td><a href="Services/OrderFulfillmentService.php.html#204"><abbr title="App\Services\OrderFulfillmentService::fulfillCheckoutSession">fulfillCheckoutSession</abbr></a></td><td class="text-right">82%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/AdminContactController.php.html#71"><abbr title="App\Http\Controllers\Api\Admin\AdminContactController::reply">reply</abbr></a></td><td class="text-right">82%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/AdminOrderController.php.html#24"><abbr title="App\Http\Controllers\Api\Admin\AdminOrderController::show">show</abbr></a></td><td class="text-right">83%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/AdminCategoryController.php.html#31"><abbr title="App\Http\Controllers\Api\Admin\AdminCategoryController::update">update</abbr></a></td><td class="text-right">85%</td></tr>
+       <tr><td><a href="Services/AuditLogger.php.html#186"><abbr title="App\Services\AuditLogger::resolveAdminContext">resolveAdminContext</abbr></a></td><td class="text-right">87%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/ChatController.php.html#41"><abbr title="App\Http\Controllers\Api\ChatController::generateBotResponse">generateBotResponse</abbr></a></td><td class="text-right">87%</td></tr>
+       <tr><td><a href="Listeners/StripeWebhookListener.php.html#52"><abbr title="App\Listeners\StripeWebhookListener::handleInvoicePaid">handleInvoicePaid</abbr></a></td><td class="text-right">87%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/AdminUserController.php.html#90"><abbr title="App\Http\Controllers\Api\Admin\AdminUserController::setBlocked">setBlocked</abbr></a></td><td class="text-right">88%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/AddressController.php.html#97"><abbr title="App\Http\Controllers\Api\AddressController::prepareAddressData">prepareAddressData</abbr></a></td><td class="text-right">88%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/ProfileController.php.html#64"><abbr title="App\Http\Controllers\Api\ProfileController::destroy">destroy</abbr></a></td><td class="text-right">88%</td></tr>
+       <tr><td><a href="Http/Controllers/Api/AuthController.php.html#89"><abbr title="App\Http\Controllers\Api\AuthController::verifyAdminOtp">verifyAdminOtp</abbr></a></td><td class="text-right">89%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3 style="margin-top: 2rem;">Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+         <th class="text-right">Complexity</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Notifications/OrderConfirmationNotification.php.html#22"><abbr title="App\Notifications\OrderConfirmationNotification::toMail">toMail</abbr></a></td><td class="text-right">0.0%</td><td class="text-right">10</td><td class="text-right">110</td></tr>
+       <tr><td><a href="Http/Controllers/Api/OrderController.php.html#46"><abbr title="App\Http\Controllers\Api\OrderController::store">store</abbr></a></td><td class="text-right">0.0%</td><td class="text-right">7</td><td class="text-right">56</td></tr>
+       <tr><td><a href="Services/AuditLogger.php.html#270"><abbr title="App\Services\AuditLogger::resolveApiContext">resolveApiContext</abbr></a></td><td class="text-right">70.6%</td><td class="text-right">26</td><td class="text-right">43</td></tr>
+       <tr><td><a href="Console/Commands/SyncStripeProducts.php.html#17"><abbr title="App\Console\Commands\SyncStripeProducts::handle">handle</abbr></a></td><td class="text-right">0.0%</td><td class="text-right">6</td><td class="text-right">42</td></tr>
+       <tr><td><a href="Auth/UtilisateurTokenRepository.php.html#33"><abbr title="App\Auth\UtilisateurTokenRepository::exists">exists</abbr></a></td><td class="text-right">0.0%</td><td class="text-right">5</td><td class="text-right">30</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/LogController.php.html#13"><abbr title="App\Http\Controllers\Api\Admin\LogController::index">index</abbr></a></td><td class="text-right">47.2%</td><td class="text-right">10</td><td class="text-right">24</td></tr>
+       <tr><td><a href="Auth/UtilisateurTokenRepository.php.html#50"><abbr title="App\Auth\UtilisateurTokenRepository::recentlyCreatedToken">recentlyCreatedToken</abbr></a></td><td class="text-right">0.0%</td><td class="text-right">4</td><td class="text-right">20</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/AdminUserController.php.html#37"><abbr title="App\Http\Controllers\Api\Admin\AdminUserController::update">update</abbr></a></td><td class="text-right">0.0%</td><td class="text-right">4</td><td class="text-right">20</td></tr>
+       <tr><td><a href="Http/Controllers/Api/AuthController.php.html#203"><abbr title="App\Http\Controllers\Api\AuthController::resendVerificationByEmail">resendVerificationByEmail</abbr></a></td><td class="text-right">0.0%</td><td class="text-right">4</td><td class="text-right">20</td></tr>
+       <tr><td><a href="Services/AccountDeletionService.php.html#74"><abbr title="App\Services\AccountDeletionService::purgeStripeData">purgeStripeData</abbr></a></td><td class="text-right">15.4%</td><td class="text-right">5</td><td class="text-right">20</td></tr>
+       <tr><td><a href="Services/AuditLogger.php.html#186"><abbr title="App\Services\AuditLogger::resolveAdminContext">resolveAdminContext</abbr></a></td><td class="text-right">87.2%</td><td class="text-right">20</td><td class="text-right">20</td></tr>
+       <tr><td><a href="Services/CloudinaryUploadService.php.html#12"><abbr title="App\Services\CloudinaryUploadService::__construct">__construct</abbr></a></td><td class="text-right">0.0%</td><td class="text-right">4</td><td class="text-right">20</td></tr>
+       <tr><td><a href="Services/StripeProductSyncService.php.html#87"><abbr title="App\Services\StripeProductSyncService::ensureRecurringPrice">ensureRecurringPrice</abbr></a></td><td class="text-right">62.5%</td><td class="text-right">12</td><td class="text-right">19</td></tr>
+       <tr><td><a href="Models/ActivityLog.php.html#39"><abbr title="App\Models\ActivityLog::normalizeDetails">normalizeDetails</abbr></a></td><td class="text-right">77.8%</td><td class="text-right">13</td><td class="text-right">14</td></tr>
+       <tr><td><a href="Http/Controllers/Api/AddressController.php.html#97"><abbr title="App\Http\Controllers\Api\AddressController::prepareAddressData">prepareAddressData</abbr></a></td><td class="text-right">88.9%</td><td class="text-right">12</td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/AdminProductController.php.html#95"><abbr title="App\Http\Controllers\Api\Admin\AdminProductController::pricesChanged">pricesChanged</abbr></a></td><td class="text-right">42.9%</td><td class="text-right">6</td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/AdminUserController.php.html#72"><abbr title="App\Http\Controllers\Api\Admin\AdminUserController::destroy">destroy</abbr></a></td><td class="text-right">0.0%</td><td class="text-right">3</td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Controllers/Api/SubscriptionController.php.html#63"><abbr title="App\Http\Controllers\Api\SubscriptionController::changeCycle">changeCycle</abbr></a></td><td class="text-right">63.4%</td><td class="text-right">9</td><td class="text-right">12</td></tr>
+       <tr><td><a href="Services/OrderFulfillmentService.php.html#174"><abbr title="App\Services\OrderFulfillmentService::isPromoValid">isPromoValid</abbr></a></td><td class="text-right">55.6%</td><td class="text-right">7</td><td class="text-right">11</td></tr>
+       <tr><td><a href="Http/Controllers/Api/AuthController.php.html#163"><abbr title="App\Http\Controllers\Api\AuthController::verifyEmail">verifyEmail</abbr></a></td><td class="text-right">66.7%</td><td class="text-right">8</td><td class="text-right">10</td></tr>
+       <tr><td><a href="Rules/ValidPromoCode.php.html#13"><abbr title="App\Rules\ValidPromoCode::validate">validate</abbr></a></td><td class="text-right">75.0%</td><td class="text-right">8</td><td class="text-right">9</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/AdminContactController.php.html#19"><abbr title="App\Http\Controllers\Api\Admin\AdminContactController::index">index</abbr></a></td><td class="text-right">56.5%</td><td class="text-right">6</td><td class="text-right">8</td></tr>
+       <tr><td><a href="Http/Controllers/Api/ChatController.php.html#41"><abbr title="App\Http\Controllers\Api\ChatController::generateBotResponse">generateBotResponse</abbr></a></td><td class="text-right">87.5%</td><td class="text-right">8</td><td class="text-right">8</td></tr>
+       <tr><td><a href="Http/Middleware/EnsureUserIsActive.php.html#11"><abbr title="App\Http\Middleware\EnsureUserIsActive::handle">handle</abbr></a></td><td class="text-right">50.0%</td><td class="text-right">5</td><td class="text-right">8</td></tr>
+       <tr><td><a href="Services/AdminLoginOtpService.php.html#35"><abbr title="App\Services\AdminLoginOtpService::verify">verify</abbr></a></td><td class="text-right">77.3%</td><td class="text-right">8</td><td class="text-right">8</td></tr>
+       <tr><td><a href="Services/OrderFulfillmentService.php.html#204"><abbr title="App\Services\OrderFulfillmentService::fulfillCheckoutSession">fulfillCheckoutSession</abbr></a></td><td class="text-right">82.6%</td><td class="text-right">8</td><td class="text-right">8</td></tr>
+       <tr><td><a href="Auth/CustomPasswordBrokerManager.php.html#9"><abbr title="App\Auth\CustomPasswordBrokerManager::createTokenRepository">createTokenRepository</abbr></a></td><td class="text-right">0.0%</td><td class="text-right">2</td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/AdminUserController.php.html#24"><abbr title="App\Http\Controllers\Api\Admin\AdminUserController::show">show</abbr></a></td><td class="text-right">0.0%</td><td class="text-right">2</td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/AdminUserController.php.html#90"><abbr title="App\Http\Controllers\Api\Admin\AdminUserController::setBlocked">setBlocked</abbr></a></td><td class="text-right">88.2%</td><td class="text-right">6</td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/Api/AuthController.php.html#139"><abbr title="App\Http\Controllers\Api\AuthController::resetPassword">resetPassword</abbr></a></td><td class="text-right">0.0%</td><td class="text-right">2</td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/Api/AuthController.php.html#223"><abbr title="App\Http\Controllers\Api\AuthController::resendVerification">resendVerification</abbr></a></td><td class="text-right">0.0%</td><td class="text-right">2</td><td class="text-right">6</td></tr>
+       <tr><td><a href="Notifications/EmailVerificationNotification.php.html#19"><abbr title="App\Notifications\EmailVerificationNotification::toMail">toMail</abbr></a></td><td class="text-right">0.0%</td><td class="text-right">2</td><td class="text-right">6</td></tr>
+       <tr><td><a href="Services/CloudinaryUploadService.php.html#34"><abbr title="App\Services\CloudinaryUploadService::upload">upload</abbr></a></td><td class="text-right">0.0%</td><td class="text-right">2</td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/AdminProductController.php.html#113"><abbr title="App\Http\Controllers\Api\Admin\AdminProductController::syncWithStripe">syncWithStripe</abbr></a></td><td class="text-right">33.3%</td><td class="text-right">3</td><td class="text-right">5</td></tr>
+       <tr><td><a href="Http/Controllers/Api/PaymentMethodController.php.html#63"><abbr title="App\Http\Controllers\Api\PaymentMethodController::destroy">destroy</abbr></a></td><td class="text-right">37.5%</td><td class="text-right">3</td><td class="text-right">5</td></tr>
+       <tr><td><a href="Http/Controllers/Api/PaymentMethodController.php.html#82"><abbr title="App\Http\Controllers\Api\PaymentMethodController::setDefault">setDefault</abbr></a></td><td class="text-right">37.5%</td><td class="text-right">3</td><td class="text-right">5</td></tr>
+       <tr><td><a href="Http/Middleware/LogAudit.php.html#13"><abbr title="App\Http\Middleware\LogAudit::handle">handle</abbr></a></td><td class="text-right">53.8%</td><td class="text-right">4</td><td class="text-right">5</td></tr>
+       <tr><td><a href="Http/Requests/StoreProductRequest.php.html#69"><abbr title="App\Http\Requests\StoreProductRequest::prepareForValidation">prepareForValidation</abbr></a></td><td class="text-right">75.0%</td><td class="text-right">5</td><td class="text-right">5</td></tr>
+       <tr><td><a href="Models/User.php.html#96"><abbr title="App\Models\User::isEmailVerificationTokenValid">isEmailVerificationTokenValid</abbr></a></td><td class="text-right">60.0%</td><td class="text-right">4</td><td class="text-right">5</td></tr>
+       <tr><td><a href="Http/Controllers/Api/AuthController.php.html#89"><abbr title="App\Http\Controllers\Api\AuthController::verifyAdminOtp">verifyAdminOtp</abbr></a></td><td class="text-right">89.5%</td><td class="text-right">4</td><td class="text-right">4</td></tr>
+       <tr><td><a href="Http/Middleware/OptionalSanctumAuth.php.html#12"><abbr title="App\Http\Middleware\OptionalSanctumAuth::handle">handle</abbr></a></td><td class="text-right">50.0%</td><td class="text-right">3</td><td class="text-right">4</td></tr>
+       <tr><td><a href="Http/Requests/StoreCategoryRequest.php.html#52"><abbr title="App\Http\Requests\StoreCategoryRequest::prepareForValidation">prepareForValidation</abbr></a></td><td class="text-right">50.0%</td><td class="text-right">3</td><td class="text-right">4</td></tr>
+       <tr><td><a href="Services/OrderFulfillmentService.php.html#57"><abbr title="App\Services\OrderFulfillmentService::stripePriceId">stripePriceId</abbr></a></td><td class="text-right">50.0%</td><td class="text-right">3</td><td class="text-right">4</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/AdminContactController.php.html#71"><abbr title="App\Http\Controllers\Api\Admin\AdminContactController::reply">reply</abbr></a></td><td class="text-right">82.9%</td><td class="text-right">3</td><td class="text-right">3</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/AdminProductController.php.html#81"><abbr title="App\Http\Controllers\Api\Admin\AdminProductController::sanitizeProductData">sanitizeProductData</abbr></a></td><td class="text-right">75.0%</td><td class="text-right">3</td><td class="text-right">3</td></tr>
+       <tr><td><a href="Http/Controllers/Api/PaymentMethodController.php.html#11"><abbr title="App\Http\Controllers\Api\PaymentMethodController::index">index</abbr></a></td><td class="text-right">21.4%</td><td class="text-right">2</td><td class="text-right">3</td></tr>
+       <tr><td><a href="Http/Controllers/Api/ProfileController.php.html#64"><abbr title="App\Http\Controllers\Api\ProfileController::destroy">destroy</abbr></a></td><td class="text-right">88.9%</td><td class="text-right">3</td><td class="text-right">3</td></tr>
+       <tr><td><a href="Http/Controllers/Api/SubscriptionController.php.html#32"><abbr title="App\Http\Controllers\Api\SubscriptionController::cancel">cancel</abbr></a></td><td class="text-right">65.0%</td><td class="text-right">3</td><td class="text-right">3</td></tr>
+       <tr><td><a href="Listeners/StripeWebhookListener.php.html#52"><abbr title="App\Listeners\StripeWebhookListener::handleInvoicePaid">handleInvoicePaid</abbr></a></td><td class="text-right">87.5%</td><td class="text-right">3</td><td class="text-right">3</td></tr>
+       <tr><td><a href="Services/AuditLogger.php.html#64"><abbr title="App\Services\AuditLogger::logPageView">logPageView</abbr></a></td><td class="text-right">75.0%</td><td class="text-right">3</td><td class="text-right">3</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/AdminCategoryController.php.html#31"><abbr title="App\Http\Controllers\Api\Admin\AdminCategoryController::update">update</abbr></a></td><td class="text-right">85.7%</td><td class="text-right">2</td><td class="text-right">2</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/AdminOrderController.php.html#24"><abbr title="App\Http\Controllers\Api\Admin\AdminOrderController::show">show</abbr></a></td><td class="text-right">83.3%</td><td class="text-right">2</td><td class="text-right">2</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/AdminProductController.php.html#64"><abbr title="App\Http\Controllers\Api\Admin\AdminProductController::destroy">destroy</abbr></a></td><td class="text-right">80.0%</td><td class="text-right">2</td><td class="text-right">2</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/AdminProductController.php.html#128"><abbr title="App\Http\Controllers\Api\Admin\AdminProductController::buildMessage">buildMessage</abbr></a></td><td class="text-right">66.7%</td><td class="text-right">2</td><td class="text-right">2</td></tr>
+       <tr><td><a href="Http/Controllers/Api/Admin/AdminPromoCodeController.php.html#62"><abbr title="App\Http\Controllers\Api\Admin\AdminPromoCodeController::destroy">destroy</abbr></a></td><td class="text-right">80.0%</td><td class="text-right">2</td><td class="text-right">2</td></tr>
+       <tr><td><a href="Http/Controllers/Api/OrderController.php.html#31"><abbr title="App\Http\Controllers\Api\OrderController::show">show</abbr></a></td><td class="text-right">62.5%</td><td class="text-right">2</td><td class="text-right">2</td></tr>
+       <tr><td><a href="Listeners/StripeWebhookListener.php.html#30"><abbr title="App\Listeners\StripeWebhookListener::asObject">asObject</abbr></a></td><td class="text-right">66.7%</td><td class="text-right">2</td><td class="text-right">2</td></tr>
+       <tr><td><a href="Services/AccountDeletionService.php.html#47"><abbr title="App\Services\AccountDeletionService::cancelSubscriptions">cancelSubscriptions</abbr></a></td><td class="text-right">52.6%</td><td class="text-right">2</td><td class="text-right">2</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 12.5.7</a> using <a href="https://www.php.net/" target="_top">PHP 8.4.15</a> and <a href="https://phpunit.de/">PHPUnit 12.5.29</a> at Fri Jun 26 9:44:17 UTC 2026.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="_js/billboard.pkgd.min.js?v=12.5.7" type="text/javascript"></script>
+  <script type="application/json" id="complexity_class">[[0,2,"Auth\/CustomPasswordBrokerManager.php.html#7","App\\Auth\\CustomPasswordBrokerManager","6"],[0,13,"Auth\/UtilisateurTokenRepository.php.html#11","App\\Auth\\UtilisateurTokenRepository","182"],[0,6,"Console\/Commands\/SyncStripeProducts.php.html#10","App\\Console\\Commands\\SyncStripeProducts","42"],[0,1,"Http\/Controllers\/Api\/Admin\/AdminUploadController.php.html#10","App\\Http\\Controllers\\Api\\Admin\\AdminUploadController","2"],[0,2,"Http\/Requests\/UploadImageRequest.php.html#8","App\\Http\\Requests\\UploadImageRequest","6"],[0,3,"Notifications\/RenewalReminderNotification.php.html#11","App\\Notifications\\RenewalReminderNotification","12"],[0,3,"Notifications\/ResetPasswordNotification.php.html#10","App\\Notifications\\ResetPasswordNotification","12"],[0,6,"Services\/CloudinaryUploadService.php.html#10","App\\Services\\CloudinaryUploadService","42"],[5.714285714285714,13,"Notifications\/OrderConfirmationNotification.php.html#11","App\\Notifications\\OrderConfirmationNotification","154.65"],[8.333333333333332,3,"Notifications\/EmailVerificationNotification.php.html#10","App\\Notifications\\EmailVerificationNotification","9.93"],[14.285714285714285,3,"Mail\/ContactReplyMail.php.html#12","App\\Mail\\ContactReplyMail","8.67"],[20,3,"Notifications\/AdminLoginOtpNotification.php.html#11","App\\Notifications\\AdminLoginOtpNotification","7.61"],[22.807017543859647,11,"Http\/Controllers\/Api\/OrderController.php.html#13","App\\Http\\Controllers\\Api\\OrderController","66.66"],[23.52941176470588,9,"Http\/Controllers\/Api\/PaymentMethodController.php.html#9","App\\Http\\Controllers\\Api\\PaymentMethodController","45.22"],[26.31578947368421,16,"Http\/Controllers\/Api\/Admin\/AdminUserController.php.html#13","App\\Http\\Controllers\\Api\\Admin\\AdminUserController","118.41"],[47.22222222222222,10,"Http\/Controllers\/Api\/Admin\/LogController.php.html#11","App\\Http\\Controllers\\Api\\Admin\\LogController","24.70"],[50,5,"Http\/Middleware\/EnsureUserIsActive.php.html#9","App\\Http\\Middleware\\EnsureUserIsActive","8.12"],[50,3,"Http\/Middleware\/OptionalSanctumAuth.php.html#10","App\\Http\\Middleware\\OptionalSanctumAuth","4.12"],[53.84615384615385,4,"Http\/Middleware\/LogAudit.php.html#11","App\\Http\\Middleware\\LogAudit","5.57"],[57.14285714285714,4,"Models\/UserAddress.php.html#8","App\\Models\\UserAddress","5.26"],[57.971014492753625,14,"Http\/Controllers\/Api\/SubscriptionController.php.html#14","App\\Http\\Controllers\\Api\\SubscriptionController","28.55"],[61.111111111111114,30,"Http\/Controllers\/Api\/AuthController.php.html#18","App\\Http\\Controllers\\Api\\AuthController","82.93"],[62.745098039215684,21,"Http\/Controllers\/Api\/Admin\/AdminProductController.php.html#13","App\\Http\\Controllers\\Api\\Admin\\AdminProductController","43.80"],[66.66666666666666,3,"Models\/ContactMessageReply.php.html#8","App\\Models\\ContactMessageReply","3.33"],[71.42857142857143,13,"Services\/AccountDeletionService.php.html#13","App\\Services\\AccountDeletionService","16.94"],[75,2,"Models\/ChatLog.php.html#8","App\\Models\\ChatLog","2.06"],[75,2,"Providers\/AppServiceProvider.php.html#11","App\\Providers\\AppServiceProvider","2.06"],[76,7,"Http\/Controllers\/Api\/Admin\/AdminCategoryController.php.html#11","App\\Http\\Controllers\\Api\\Admin\\AdminCategoryController","7.68"],[76.11940298507463,10,"Http\/Controllers\/Api\/Admin\/AdminContactController.php.html#17","App\\Http\\Controllers\\Api\\Admin\\AdminContactController","11.36"],[76.47058823529412,9,"Rules\/ValidPromoCode.php.html#9","App\\Rules\\ValidPromoCode","10.06"],[77.5,18,"Models\/User.php.html#16","App\\Models\\User","21.69"],[80,5,"Models\/Order.php.html#9","App\\Models\\Order","5.20"],[80,3,"Models\/OrderItem.php.html#8","App\\Models\\OrderItem","3.07"],[80,4,"Models\/ProductSubscription.php.html#8","App\\Models\\ProductSubscription","4.13"],[82.8125,24,"Http\/Controllers\/Api\/AddressController.php.html#11","App\\Http\\Controllers\\Api\\AddressController","26.92"],[83.82352941176471,18,"Services\/StripeProductSyncService.php.html#12","App\\Services\\StripeProductSyncService","19.37"],[84.61538461538461,16,"Models\/ActivityLog.php.html#9","App\\Models\\ActivityLog","16.93"],[84.61538461538461,6,"Models\/Product.php.html#9","App\\Models\\Product","6.13"],[85.32608695652173,87,"Services\/AuditLogger.php.html#8","App\\Services\\AuditLogger","110.92"],[85.71428571428571,2,"Models\/PromoCode.php.html#8","App\\Models\\PromoCode","2.01"],[85.71428571428571,9,"Services\/AdminLoginOtpService.php.html#12","App\\Services\\AdminLoginOtpService","9.24"],[86.86131386861314,38,"Services\/OrderFulfillmentService.php.html#15","App\\Services\\OrderFulfillmentService","41.28"],[87.87878787878788,6,"Http\/Controllers\/Api\/Admin\/AdminPromoCodeController.php.html#11","App\\Http\\Controllers\\Api\\Admin\\AdminPromoCodeController","6.06"],[89.74358974358975,12,"Listeners\/StripeWebhookListener.php.html#9","App\\Listeners\\StripeWebhookListener","12.16"],[90.625,7,"Http\/Requests\/StoreCategoryRequest.php.html#8","App\\Http\\Requests\\StoreCategoryRequest","7.04"],[91.30434782608695,5,"Http\/Controllers\/Api\/Admin\/AdminOrderController.php.html#11","App\\Http\\Controllers\\Api\\Admin\\AdminOrderController","5.02"],[92.85714285714286,2,"Http\/Controllers\/Api\/PromoCodeController.php.html#10","App\\Http\\Controllers\\Api\\PromoCodeController","2.00"],[93.87755102040816,10,"Http\/Requests\/StoreProductRequest.php.html#8","App\\Http\\Requests\\StoreProductRequest","10.02"],[94.28571428571428,10,"Http\/Controllers\/Api\/ProfileController.php.html#15","App\\Http\\Controllers\\Api\\ProfileController","10.02"],[95.83333333333334,7,"Http\/Controllers\/Api\/ProductController.php.html#11","App\\Http\\Controllers\\Api\\ProductController","7"],[96.55172413793103,9,"Http\/Controllers\/Api\/ChatController.php.html#11","App\\Http\\Controllers\\Api\\ChatController","9"],[100,2,"Http\/Controllers\/Api\/ActivityController.php.html#10","App\\Http\\Controllers\\Api\\ActivityController","2"],[100,7,"Http\/Controllers\/Api\/Admin\/AdminHomepageController.php.html#11","App\\Http\\Controllers\\Api\\Admin\\AdminHomepageController","7"],[100,1,"Http\/Controllers\/Api\/BillingController.php.html#8","App\\Http\\Controllers\\Api\\BillingController","1"],[100,1,"Http\/Controllers\/Api\/CategoryController.php.html#10","App\\Http\\Controllers\\Api\\CategoryController","1"],[100,1,"Http\/Controllers\/Api\/ContactController.php.html#11","App\\Http\\Controllers\\Api\\ContactController","1"],[100,1,"Http\/Controllers\/Api\/HomepageController.php.html#10","App\\Http\\Controllers\\Api\\HomepageController","1"],[100,0,"Http\/Controllers\/Controller.php.html#5","App\\Http\\Controllers\\Controller","0"],[100,3,"Http\/Middleware\/EnsureEmailIsVerified.php.html#9","App\\Http\\Middleware\\EnsureEmailIsVerified","3"],[100,3,"Http\/Middleware\/IsAdmin.php.html#9","App\\Http\\Middleware\\IsAdmin","3"],[100,2,"Http\/Requests\/Auth\/LoginRequest.php.html#7","App\\Http\\Requests\\Auth\\LoginRequest","2"],[100,3,"Http\/Requests\/Auth\/RegisterRequest.php.html#8","App\\Http\\Requests\\Auth\\RegisterRequest","3"],[100,3,"Http\/Requests\/Auth\/VerifyAdminOtpRequest.php.html#7","App\\Http\\Requests\\Auth\\VerifyAdminOtpRequest","3"],[100,3,"Http\/Requests\/DeleteAccountRequest.php.html#7","App\\Http\\Requests\\DeleteAccountRequest","3"],[100,2,"Http\/Requests\/ReplyContactRequest.php.html#7","App\\Http\\Requests\\ReplyContactRequest","2"],[100,4,"Http\/Requests\/StoreAddressRequest.php.html#8","App\\Http\\Requests\\StoreAddressRequest","4"],[100,2,"Http\/Requests\/StoreContactRequest.php.html#7","App\\Http\\Requests\\StoreContactRequest","2"],[100,10,"Http\/Requests\/StoreOrderRequest.php.html#9","App\\Http\\Requests\\StoreOrderRequest","10"],[100,2,"Http\/Requests\/UpdateContactStatusRequest.php.html#8","App\\Http\\Requests\\UpdateContactStatusRequest","2"],[100,4,"Http\/Requests\/ValidatePromoRequest.php.html#8","App\\Http\\Requests\\ValidatePromoRequest","4"],[100,1,"Http\/Resources\/AddressResource.php.html#8","App\\Http\\Resources\\AddressResource","1"],[100,1,"Http\/Resources\/CategoryResource.php.html#8","App\\Http\\Resources\\CategoryResource","1"],[100,1,"Http\/Resources\/ContactMessageReplyResource.php.html#8","App\\Http\\Resources\\ContactMessageReplyResource","1"],[100,1,"Http\/Resources\/ContactMessageResource.php.html#8","App\\Http\\Resources\\ContactMessageResource","1"],[100,1,"Http\/Resources\/LogResource.php.html#9","App\\Http\\Resources\\LogResource","1"],[100,1,"Http\/Resources\/OrderItemResource.php.html#8","App\\Http\\Resources\\OrderItemResource","1"],[100,1,"Http\/Resources\/OrderResource.php.html#8","App\\Http\\Resources\\OrderResource","1"],[100,2,"Http\/Resources\/ProductResource.php.html#8","App\\Http\\Resources\\ProductResource","2"],[100,1,"Http\/Resources\/SubscriptionResource.php.html#8","App\\Http\\Resources\\SubscriptionResource","1"],[100,1,"Http\/Resources\/UserResource.php.html#8","App\\Http\\Resources\\UserResource","1"],[100,4,"Models\/AdminLoginOtp.php.html#8","App\\Models\\AdminLoginOtp","4"],[100,2,"Models\/Category.php.html#8","App\\Models\\Category","2"],[100,4,"Models\/ContactMessage.php.html#9","App\\Models\\ContactMessage","4"],[100,0,"Models\/HomepageContent.php.html#7","App\\Models\\HomepageContent","0"],[100,1,"Models\/HomepageSlide.php.html#7","App\\Models\\HomepageSlide","1"],[100,0,"OpenApi.php.html#7","App\\OpenApi","0"],[100,3,"Support\/PasswordRules.php.html#7","App\\Support\\PasswordRules","3"],[100,0,"Swagger\/AdminPathsPart1.php.html#7","App\\Swagger\\AdminPathsPart1","0"],[100,0,"Swagger\/AdminPathsPart2.php.html#7","App\\Swagger\\AdminPathsPart2","0"],[100,0,"Swagger\/AuthPaths.php.html#7","App\\Swagger\\AuthPaths","0"],[100,0,"Swagger\/CommercePaths.php.html#7","App\\Swagger\\CommercePaths","0"],[100,0,"Swagger\/PublicPaths.php.html#7","App\\Swagger\\PublicPaths","0"],[100,0,"Swagger\/UserPaths.php.html#7","App\\Swagger\\UserPaths","0"]]</script>
+  <script type="application/json" id="complexity_method">[[0,2,"Auth\/CustomPasswordBrokerManager.php.html#9","App\\Auth\\CustomPasswordBrokerManager::createTokenRepository","6"],[0,1,"Auth\/UtilisateurTokenRepository.php.html#13","App\\Auth\\UtilisateurTokenRepository::__construct","2"],[0,1,"Auth\/UtilisateurTokenRepository.php.html#19","App\\Auth\\UtilisateurTokenRepository::create","2"],[0,5,"Auth\/UtilisateurTokenRepository.php.html#33","App\\Auth\\UtilisateurTokenRepository::exists","30"],[0,4,"Auth\/UtilisateurTokenRepository.php.html#50","App\\Auth\\UtilisateurTokenRepository::recentlyCreatedToken","20"],[0,1,"Auth\/UtilisateurTokenRepository.php.html#65","App\\Auth\\UtilisateurTokenRepository::delete","2"],[0,1,"Auth\/UtilisateurTokenRepository.php.html#75","App\\Auth\\UtilisateurTokenRepository::deleteExpired","2"],[0,6,"Console\/Commands\/SyncStripeProducts.php.html#17","App\\Console\\Commands\\SyncStripeProducts::handle","42"],[0,1,"Http\/Controllers\/Api\/AddressController.php.html#13","App\\Http\\Controllers\\Api\\AddressController::index","2"],[0,1,"Http\/Controllers\/Api\/Admin\/AdminCategoryController.php.html#13","App\\Http\\Controllers\\Api\\Admin\\AdminCategoryController::index","2"],[0,1,"Http\/Controllers\/Api\/Admin\/AdminProductController.php.html#19","App\\Http\\Controllers\\Api\\Admin\\AdminProductController::index","2"],[0,1,"Http\/Controllers\/Api\/Admin\/AdminPromoCodeController.php.html#13","App\\Http\\Controllers\\Api\\Admin\\AdminPromoCodeController::index","2"],[0,1,"Http\/Controllers\/Api\/Admin\/AdminUploadController.php.html#12","App\\Http\\Controllers\\Api\\Admin\\AdminUploadController::store","2"],[0,1,"Http\/Controllers\/Api\/Admin\/AdminUserController.php.html#15","App\\Http\\Controllers\\Api\\Admin\\AdminUserController::index","2"],[0,2,"Http\/Controllers\/Api\/Admin\/AdminUserController.php.html#24","App\\Http\\Controllers\\Api\\Admin\\AdminUserController::show","6"],[0,4,"Http\/Controllers\/Api\/Admin\/AdminUserController.php.html#37","App\\Http\\Controllers\\Api\\Admin\\AdminUserController::update","20"],[0,3,"Http\/Controllers\/Api\/Admin\/AdminUserController.php.html#72","App\\Http\\Controllers\\Api\\Admin\\AdminUserController::destroy","12"],[0,1,"Http\/Controllers\/Api\/AuthController.php.html#128","App\\Http\\Controllers\\Api\\AuthController::forgotPassword","2"],[0,2,"Http\/Controllers\/Api\/AuthController.php.html#139","App\\Http\\Controllers\\Api\\AuthController::resetPassword","6"],[0,4,"Http\/Controllers\/Api\/AuthController.php.html#203","App\\Http\\Controllers\\Api\\AuthController::resendVerificationByEmail","20"],[0,2,"Http\/Controllers\/Api\/AuthController.php.html#223","App\\Http\\Controllers\\Api\\AuthController::resendVerification","6"],[0,7,"Http\/Controllers\/Api\/OrderController.php.html#46","App\\Http\\Controllers\\Api\\OrderController::store","56"],[0,1,"Http\/Controllers\/Api\/SubscriptionController.php.html#20","App\\Http\\Controllers\\Api\\SubscriptionController::index","2"],[0,1,"Http\/Requests\/UploadImageRequest.php.html#10","App\\Http\\Requests\\UploadImageRequest::authorize","2"],[0,1,"Http\/Requests\/UploadImageRequest.php.html#15","App\\Http\\Requests\\UploadImageRequest::rules","2"],[0,1,"Mail\/ContactReplyMail.php.html#21","App\\Mail\\ContactReplyMail::envelope","2"],[0,1,"Mail\/ContactReplyMail.php.html#28","App\\Mail\\ContactReplyMail::content","2"],[0,1,"Models\/ChatLog.php.html#27","App\\Models\\ChatLog::user","2"],[0,1,"Models\/ContactMessageReply.php.html#28","App\\Models\\ContactMessageReply::contactMessage","2"],[0,1,"Models\/ContactMessageReply.php.html#33","App\\Models\\ContactMessageReply::admin","2"],[0,1,"Models\/Order.php.html#47","App\\Models\\Order::promoCode","2"],[0,1,"Models\/Order.php.html#57","App\\Models\\Order::productSubscriptions","2"],[0,1,"Models\/OrderItem.php.html#26","App\\Models\\OrderItem::order","2"],[0,1,"Models\/Product.php.html#54","App\\Models\\Product::orderItems","2"],[0,1,"Models\/Product.php.html#59","App\\Models\\Product::productSubscriptions","2"],[0,1,"Models\/ProductSubscription.php.html#39","App\\Models\\ProductSubscription::user","2"],[0,1,"Models\/ProductSubscription.php.html#44","App\\Models\\ProductSubscription::order","2"],[0,1,"Models\/PromoCode.php.html#33","App\\Models\\PromoCode::orders","2"],[0,1,"Models\/User.php.html#57","App\\Models\\User::getAuthPassword","2"],[0,1,"Models\/User.php.html#116","App\\Models\\User::getEmailForVerification","2"],[0,1,"Models\/User.php.html#121","App\\Models\\User::sendPasswordResetNotification","2"],[0,1,"Models\/User.php.html#126","App\\Models\\User::orders","2"],[0,1,"Models\/User.php.html#131","App\\Models\\User::productSubscriptions","2"],[0,1,"Models\/User.php.html#136","App\\Models\\User::addresses","2"],[0,1,"Models\/User.php.html#141","App\\Models\\User::chatLogs","2"],[0,1,"Models\/UserAddress.php.html#37","App\\Models\\UserAddress::supportsBilling","2"],[0,1,"Models\/UserAddress.php.html#42","App\\Models\\UserAddress::supportsShipping","2"],[0,1,"Models\/UserAddress.php.html#47","App\\Models\\UserAddress::user","2"],[0,1,"Notifications\/AdminLoginOtpNotification.php.html#25","App\\Notifications\\AdminLoginOtpNotification::toMail","2"],[0,2,"Notifications\/EmailVerificationNotification.php.html#19","App\\Notifications\\EmailVerificationNotification::toMail","6"],[0,10,"Notifications\/OrderConfirmationNotification.php.html#22","App\\Notifications\\OrderConfirmationNotification::toMail","110"],[0,1,"Notifications\/OrderConfirmationNotification.php.html#76","App\\Notifications\\OrderConfirmationNotification::formatMoney","2"],[0,1,"Notifications\/RenewalReminderNotification.php.html#15","App\\Notifications\\RenewalReminderNotification::__construct","2"],[0,1,"Notifications\/RenewalReminderNotification.php.html#17","App\\Notifications\\RenewalReminderNotification::via","2"],[0,1,"Notifications\/RenewalReminderNotification.php.html#22","App\\Notifications\\RenewalReminderNotification::toMail","2"],[0,1,"Notifications\/ResetPasswordNotification.php.html#16","App\\Notifications\\ResetPasswordNotification::via","2"],[0,1,"Notifications\/ResetPasswordNotification.php.html#21","App\\Notifications\\ResetPasswordNotification::toMail","2"],[0,1,"Services\/AuditLogger.php.html#155","App\\Services\\AuditLogger::purgeExpired","2"],[0,4,"Services\/CloudinaryUploadService.php.html#12","App\\Services\\CloudinaryUploadService::__construct","20"],[0,2,"Services\/CloudinaryUploadService.php.html#34","App\\Services\\CloudinaryUploadService::upload","6"],[14.285714285714285,1,"Http\/Controllers\/Api\/PaymentMethodController.php.html#33","App\\Http\\Controllers\\Api\\PaymentMethodController::store","1.63"],[15.384615384615385,5,"Services\/AccountDeletionService.php.html#74","App\\Services\\AccountDeletionService::purgeStripeData","20.15"],[21.428571428571427,2,"Http\/Controllers\/Api\/PaymentMethodController.php.html#11","App\\Http\\Controllers\\Api\\PaymentMethodController::index","3.94"],[33.33333333333333,3,"Http\/Controllers\/Api\/Admin\/AdminProductController.php.html#113","App\\Http\\Controllers\\Api\\Admin\\AdminProductController::syncWithStripe","5.67"],[37.5,3,"Http\/Controllers\/Api\/PaymentMethodController.php.html#63","App\\Http\\Controllers\\Api\\PaymentMethodController::destroy","5.20"],[37.5,3,"Http\/Controllers\/Api\/PaymentMethodController.php.html#82","App\\Http\\Controllers\\Api\\PaymentMethodController::setDefault","5.20"],[42.857142857142854,6,"Http\/Controllers\/Api\/Admin\/AdminProductController.php.html#95","App\\Http\\Controllers\\Api\\Admin\\AdminProductController::pricesChanged","12.72"],[47.22222222222222,10,"Http\/Controllers\/Api\/Admin\/LogController.php.html#13","App\\Http\\Controllers\\Api\\Admin\\LogController::index","24.70"],[50,5,"Http\/Middleware\/EnsureUserIsActive.php.html#11","App\\Http\\Middleware\\EnsureUserIsActive::handle","8.12"],[50,3,"Http\/Middleware\/OptionalSanctumAuth.php.html#12","App\\Http\\Middleware\\OptionalSanctumAuth::handle","4.12"],[50,3,"Http\/Requests\/StoreCategoryRequest.php.html#52","App\\Http\\Requests\\StoreCategoryRequest::prepareForValidation","4.12"],[50,3,"Services\/OrderFulfillmentService.php.html#57","App\\Services\\OrderFulfillmentService::stripePriceId","4.12"],[52.63157894736842,2,"Services\/AccountDeletionService.php.html#47","App\\Services\\AccountDeletionService::cancelSubscriptions","2.43"],[53.84615384615385,4,"Http\/Middleware\/LogAudit.php.html#13","App\\Http\\Middleware\\LogAudit::handle","5.57"],[55.55555555555556,7,"Services\/OrderFulfillmentService.php.html#174","App\\Services\\OrderFulfillmentService::isPromoValid","11.30"],[56.52173913043478,6,"Http\/Controllers\/Api\/Admin\/AdminContactController.php.html#19","App\\Http\\Controllers\\Api\\Admin\\AdminContactController::index","8.96"],[60,4,"Models\/User.php.html#96","App\\Models\\User::isEmailVerificationTokenValid","5.02"],[62.5,2,"Http\/Controllers\/Api\/OrderController.php.html#31","App\\Http\\Controllers\\Api\\OrderController::show","2.21"],[62.5,12,"Services\/StripeProductSyncService.php.html#87","App\\Services\\StripeProductSyncService::ensureRecurringPrice","19.59"],[63.41463414634146,9,"Http\/Controllers\/Api\/SubscriptionController.php.html#63","App\\Http\\Controllers\\Api\\SubscriptionController::changeCycle","12.97"],[65,3,"Http\/Controllers\/Api\/SubscriptionController.php.html#32","App\\Http\\Controllers\\Api\\SubscriptionController::cancel","3.39"],[66.66666666666666,2,"Http\/Controllers\/Api\/Admin\/AdminProductController.php.html#128","App\\Http\\Controllers\\Api\\Admin\\AdminProductController::buildMessage","2.15"],[66.66666666666666,8,"Http\/Controllers\/Api\/AuthController.php.html#163","App\\Http\\Controllers\\Api\\AuthController::verifyEmail","10.37"],[66.66666666666666,2,"Listeners\/StripeWebhookListener.php.html#30","App\\Listeners\\StripeWebhookListener::asObject","2.15"],[66.66666666666666,1,"Providers\/AppServiceProvider.php.html#13","App\\Providers\\AppServiceProvider::register","1.04"],[70.58823529411765,26,"Services\/AuditLogger.php.html#270","App\\Services\\AuditLogger::resolveApiContext","43.20"],[75,3,"Http\/Controllers\/Api\/Admin\/AdminProductController.php.html#81","App\\Http\\Controllers\\Api\\Admin\\AdminProductController::sanitizeProductData","3.14"],[75,5,"Http\/Requests\/StoreProductRequest.php.html#69","App\\Http\\Requests\\StoreProductRequest::prepareForValidation","5.39"],[75,8,"Rules\/ValidPromoCode.php.html#13","App\\Rules\\ValidPromoCode::validate","9.00"],[75,3,"Services\/AuditLogger.php.html#64","App\\Services\\AuditLogger::logPageView","3.14"],[77.27272727272727,8,"Services\/AdminLoginOtpService.php.html#35","App\\Services\\AdminLoginOtpService::verify","8.75"],[77.77777777777779,13,"Models\/ActivityLog.php.html#39","App\\Models\\ActivityLog::normalizeDetails","14.85"],[80,2,"Http\/Controllers\/Api\/Admin\/AdminProductController.php.html#64","App\\Http\\Controllers\\Api\\Admin\\AdminProductController::destroy","2.03"],[80,2,"Http\/Controllers\/Api\/Admin\/AdminPromoCodeController.php.html#62","App\\Http\\Controllers\\Api\\Admin\\AdminPromoCodeController::destroy","2.03"],[82.6086956521739,8,"Services\/OrderFulfillmentService.php.html#204","App\\Services\\OrderFulfillmentService::fulfillCheckoutSession","8.34"],[82.85714285714286,3,"Http\/Controllers\/Api\/Admin\/AdminContactController.php.html#71","App\\Http\\Controllers\\Api\\Admin\\AdminContactController::reply","3.05"],[83.33333333333334,2,"Http\/Controllers\/Api\/Admin\/AdminOrderController.php.html#24","App\\Http\\Controllers\\Api\\Admin\\AdminOrderController::show","2.02"],[85.71428571428571,2,"Http\/Controllers\/Api\/Admin\/AdminCategoryController.php.html#31","App\\Http\\Controllers\\Api\\Admin\\AdminCategoryController::update","2.01"],[87.17948717948718,20,"Services\/AuditLogger.php.html#186","App\\Services\\AuditLogger::resolveAdminContext","20.84"],[87.5,8,"Http\/Controllers\/Api\/ChatController.php.html#41","App\\Http\\Controllers\\Api\\ChatController::generateBotResponse","8.12"],[87.5,3,"Listeners\/StripeWebhookListener.php.html#52","App\\Listeners\\StripeWebhookListener::handleInvoicePaid","3.02"],[88.23529411764706,6,"Http\/Controllers\/Api\/Admin\/AdminUserController.php.html#90","App\\Http\\Controllers\\Api\\Admin\\AdminUserController::setBlocked","6.06"],[88.88888888888889,12,"Http\/Controllers\/Api\/AddressController.php.html#97","App\\Http\\Controllers\\Api\\AddressController::prepareAddressData","12.20"],[88.88888888888889,3,"Http\/Controllers\/Api\/ProfileController.php.html#64","App\\Http\\Controllers\\Api\\ProfileController::destroy","3.01"],[89.47368421052632,4,"Http\/Controllers\/Api\/AuthController.php.html#89","App\\Http\\Controllers\\Api\\AuthController::verifyAdminOtp","4.02"],[90,3,"Http\/Controllers\/Api\/Admin\/AdminCategoryController.php.html#46","App\\Http\\Controllers\\Api\\Admin\\AdminCategoryController::destroy","3.01"],[90,5,"Listeners\/StripeWebhookListener.php.html#15","App\\Listeners\\StripeWebhookListener::handle","5.03"],[90.9090909090909,2,"Http\/Controllers\/Api\/Admin\/AdminOrderController.php.html#37","App\\Http\\Controllers\\Api\\Admin\\AdminOrderController::updateStatus","2.00"],[90.9090909090909,2,"Http\/Controllers\/Api\/Admin\/AdminProductController.php.html#44","App\\Http\\Controllers\\Api\\Admin\\AdminProductController::update","2.00"],[91.66666666666666,3,"Services\/StripeProductSyncService.php.html#64","App\\Services\\StripeProductSyncService::ensureStripeProduct","3.01"],[92.85714285714286,2,"Http\/Controllers\/Api\/Admin\/AdminPromoCodeController.php.html#39","App\\Http\\Controllers\\Api\\Admin\\AdminPromoCodeController::update","2.00"],[92.85714285714286,2,"Http\/Controllers\/Api\/PromoCodeController.php.html#12","App\\Http\\Controllers\\Api\\PromoCodeController::validate","2.00"],[92.95774647887323,11,"Services\/OrderFulfillmentService.php.html#72","App\\Services\\OrderFulfillmentService::fulfill","11.04"],[93.75,5,"Http\/Controllers\/Api\/ProductController.php.html#13","App\\Http\\Controllers\\Api\\ProductController::index","5.01"],[93.75,3,"Services\/OrderFulfillmentService.php.html#17","App\\Services\\OrderFulfillmentService::calculateLineItems","3.00"],[95.45454545454545,6,"Http\/Controllers\/Api\/AddressController.php.html#54","App\\Http\\Controllers\\Api\\AddressController::destroy","6"],[95.45454545454545,9,"Services\/AuditLogger.php.html#10","App\\Services\\AuditLogger::log","9"],[95.65217391304348,6,"Http\/Controllers\/Api\/ProfileController.php.html#24","App\\Http\\Controllers\\Api\\ProfileController::update","6"],[96,6,"Http\/Controllers\/Api\/AuthController.php.html#48","App\\Http\\Controllers\\Api\\AuthController::login","6"],[96.7741935483871,2,"Services\/StripeProductSyncService.php.html#22","App\\Services\\StripeProductSyncService::sync","2"],[97.05882352941177,3,"Http\/Requests\/StoreProductRequest.php.html#15","App\\Http\\Requests\\StoreProductRequest::rules","3"],[100,2,"Http\/Controllers\/Api\/ActivityController.php.html#12","App\\Http\\Controllers\\Api\\ActivityController::pageView","2"],[100,1,"Http\/Controllers\/Api\/AddressController.php.html#26","App\\Http\\Controllers\\Api\\AddressController::store","1"],[100,2,"Http\/Controllers\/Api\/AddressController.php.html#40","App\\Http\\Controllers\\Api\\AddressController::update","2"],[100,1,"Http\/Controllers\/Api\/AddressController.php.html#134","App\\Http\\Controllers\\Api\\AddressController::canUseForBilling","1"],[100,1,"Http\/Controllers\/Api\/AddressController.php.html#139","App\\Http\\Controllers\\Api\\AddressController::canUseForShipping","1"],[100,1,"Http\/Controllers\/Api\/Admin\/AdminCategoryController.php.html#22","App\\Http\\Controllers\\Api\\Admin\\AdminCategoryController::store","1"],[100,1,"Http\/Controllers\/Api\/Admin\/AdminContactController.php.html#56","App\\Http\\Controllers\\Api\\Admin\\AdminContactController::updateStatus","1"],[100,3,"Http\/Controllers\/Api\/Admin\/AdminHomepageController.php.html#13","App\\Http\\Controllers\\Api\\Admin\\AdminHomepageController::updateSlides","3"],[100,2,"Http\/Controllers\/Api\/Admin\/AdminHomepageController.php.html#41","App\\Http\\Controllers\\Api\\Admin\\AdminHomepageController::updateContent","2"],[100,2,"Http\/Controllers\/Api\/Admin\/AdminHomepageController.php.html#58","App\\Http\\Controllers\\Api\\Admin\\AdminHomepageController::destroySlide","2"],[100,1,"Http\/Controllers\/Api\/Admin\/AdminOrderController.php.html#13","App\\Http\\Controllers\\Api\\Admin\\AdminOrderController::index","1"],[100,1,"Http\/Controllers\/Api\/Admin\/AdminProductController.php.html#15","App\\Http\\Controllers\\Api\\Admin\\AdminProductController::__construct","1"],[100,1,"Http\/Controllers\/Api\/Admin\/AdminProductController.php.html#31","App\\Http\\Controllers\\Api\\Admin\\AdminProductController::store","1"],[100,1,"Http\/Controllers\/Api\/Admin\/AdminPromoCodeController.php.html#20","App\\Http\\Controllers\\Api\\Admin\\AdminPromoCodeController::store","1"],[100,1,"Http\/Controllers\/Api\/AuthController.php.html#20","App\\Http\\Controllers\\Api\\AuthController::__construct","1"],[100,1,"Http\/Controllers\/Api\/AuthController.php.html#24","App\\Http\\Controllers\\Api\\AuthController::register","1"],[100,1,"Http\/Controllers\/Api\/AuthController.php.html#121","App\\Http\\Controllers\\Api\\AuthController::logout","1"],[100,1,"Http\/Controllers\/Api\/BillingController.php.html#10","App\\Http\\Controllers\\Api\\BillingController::config","1"],[100,1,"Http\/Controllers\/Api\/CategoryController.php.html#12","App\\Http\\Controllers\\Api\\CategoryController::index","1"],[100,1,"Http\/Controllers\/Api\/ChatController.php.html#13","App\\Http\\Controllers\\Api\\ChatController::store","1"],[100,1,"Http\/Controllers\/Api\/ContactController.php.html#13","App\\Http\\Controllers\\Api\\ContactController::store","1"],[100,1,"Http\/Controllers\/Api\/HomepageController.php.html#12","App\\Http\\Controllers\\Api\\HomepageController::index","1"],[100,1,"Http\/Controllers\/Api\/OrderController.php.html#15","App\\Http\\Controllers\\Api\\OrderController::__construct","1"],[100,1,"Http\/Controllers\/Api\/OrderController.php.html#19","App\\Http\\Controllers\\Api\\OrderController::index","1"],[100,2,"Http\/Controllers\/Api\/ProductController.php.html#43","App\\Http\\Controllers\\Api\\ProductController::show","2"],[100,1,"Http\/Controllers\/Api\/ProfileController.php.html#17","App\\Http\\Controllers\\Api\\ProfileController::show","1"],[100,1,"Http\/Controllers\/Api\/SubscriptionController.php.html#16","App\\Http\\Controllers\\Api\\SubscriptionController::__construct","1"],[100,3,"Http\/Middleware\/EnsureEmailIsVerified.php.html#11","App\\Http\\Middleware\\EnsureEmailIsVerified::handle","3"],[100,3,"Http\/Middleware\/IsAdmin.php.html#11","App\\Http\\Middleware\\IsAdmin::handle","3"],[100,1,"Http\/Requests\/Auth\/LoginRequest.php.html#9","App\\Http\\Requests\\Auth\\LoginRequest::authorize","1"],[100,1,"Http\/Requests\/Auth\/LoginRequest.php.html#14","App\\Http\\Requests\\Auth\\LoginRequest::rules","1"],[100,1,"Http\/Requests\/Auth\/RegisterRequest.php.html#10","App\\Http\\Requests\\Auth\\RegisterRequest::authorize","1"],[100,1,"Http\/Requests\/Auth\/RegisterRequest.php.html#15","App\\Http\\Requests\\Auth\\RegisterRequest::rules","1"],[100,1,"Http\/Requests\/Auth\/RegisterRequest.php.html#25","App\\Http\\Requests\\Auth\\RegisterRequest::messages","1"],[100,1,"Http\/Requests\/Auth\/VerifyAdminOtpRequest.php.html#9","App\\Http\\Requests\\Auth\\VerifyAdminOtpRequest::authorize","1"],[100,1,"Http\/Requests\/Auth\/VerifyAdminOtpRequest.php.html#14","App\\Http\\Requests\\Auth\\VerifyAdminOtpRequest::rules","1"],[100,1,"Http\/Requests\/Auth\/VerifyAdminOtpRequest.php.html#22","App\\Http\\Requests\\Auth\\VerifyAdminOtpRequest::messages","1"],[100,1,"Http\/Requests\/DeleteAccountRequest.php.html#9","App\\Http\\Requests\\DeleteAccountRequest::authorize","1"],[100,1,"Http\/Requests\/DeleteAccountRequest.php.html#14","App\\Http\\Requests\\DeleteAccountRequest::rules","1"],[100,1,"Http\/Requests\/DeleteAccountRequest.php.html#22","App\\Http\\Requests\\DeleteAccountRequest::messages","1"],[100,1,"Http\/Requests\/ReplyContactRequest.php.html#9","App\\Http\\Requests\\ReplyContactRequest::authorize","1"],[100,1,"Http\/Requests\/ReplyContactRequest.php.html#14","App\\Http\\Requests\\ReplyContactRequest::rules","1"],[100,1,"Http\/Requests\/StoreAddressRequest.php.html#10","App\\Http\\Requests\\StoreAddressRequest::authorize","1"],[100,3,"Http\/Requests\/StoreAddressRequest.php.html#15","App\\Http\\Requests\\StoreAddressRequest::rules","3"],[100,1,"Http\/Requests\/StoreCategoryRequest.php.html#10","App\\Http\\Requests\\StoreCategoryRequest::authorize","1"],[100,2,"Http\/Requests\/StoreCategoryRequest.php.html#15","App\\Http\\Requests\\StoreCategoryRequest::rules","2"],[100,1,"Http\/Requests\/StoreCategoryRequest.php.html#43","App\\Http\\Requests\\StoreCategoryRequest::messages","1"],[100,1,"Http\/Requests\/StoreContactRequest.php.html#9","App\\Http\\Requests\\StoreContactRequest::authorize","1"],[100,1,"Http\/Requests\/StoreContactRequest.php.html#14","App\\Http\\Requests\\StoreContactRequest::rules","1"],[100,1,"Http\/Requests\/StoreOrderRequest.php.html#11","App\\Http\\Requests\\StoreOrderRequest::authorize","1"],[100,1,"Http\/Requests\/StoreOrderRequest.php.html#16","App\\Http\\Requests\\StoreOrderRequest::rules","1"],[100,4,"Http\/Requests\/StoreOrderRequest.php.html#31","App\\Http\\Requests\\StoreOrderRequest::withValidator","4"],[100,4,"Http\/Requests\/StoreOrderRequest.php.html#47","App\\Http\\Requests\\StoreOrderRequest::requiresShippingAddress","4"],[100,1,"Http\/Requests\/StoreProductRequest.php.html#10","App\\Http\\Requests\\StoreProductRequest::authorize","1"],[100,1,"Http\/Requests\/StoreProductRequest.php.html#59","App\\Http\\Requests\\StoreProductRequest::messages","1"],[100,1,"Http\/Requests\/UpdateContactStatusRequest.php.html#10","App\\Http\\Requests\\UpdateContactStatusRequest::authorize","1"],[100,1,"Http\/Requests\/UpdateContactStatusRequest.php.html#15","App\\Http\\Requests\\UpdateContactStatusRequest::rules","1"],[100,1,"Http\/Requests\/ValidatePromoRequest.php.html#10","App\\Http\\Requests\\ValidatePromoRequest::authorize","1"],[100,1,"Http\/Requests\/ValidatePromoRequest.php.html#15","App\\Http\\Requests\\ValidatePromoRequest::rules","1"],[100,2,"Http\/Requests\/ValidatePromoRequest.php.html#23","App\\Http\\Requests\\ValidatePromoRequest::prepareForValidation","2"],[100,1,"Http\/Resources\/AddressResource.php.html#10","App\\Http\\Resources\\AddressResource::toArray","1"],[100,1,"Http\/Resources\/CategoryResource.php.html#10","App\\Http\\Resources\\CategoryResource::toArray","1"],[100,1,"Http\/Resources\/ContactMessageReplyResource.php.html#10","App\\Http\\Resources\\ContactMessageReplyResource::toArray","1"],[100,1,"Http\/Resources\/ContactMessageResource.php.html#10","App\\Http\\Resources\\ContactMessageResource::toArray","1"],[100,1,"Http\/Resources\/LogResource.php.html#11","App\\Http\\Resources\\LogResource::toArray","1"],[100,1,"Http\/Resources\/OrderItemResource.php.html#10","App\\Http\\Resources\\OrderItemResource::toArray","1"],[100,1,"Http\/Resources\/OrderResource.php.html#10","App\\Http\\Resources\\OrderResource::toArray","1"],[100,2,"Http\/Resources\/ProductResource.php.html#10","App\\Http\\Resources\\ProductResource::toArray","2"],[100,1,"Http\/Resources\/SubscriptionResource.php.html#10","App\\Http\\Resources\\SubscriptionResource::toArray","1"],[100,1,"Http\/Resources\/UserResource.php.html#10","App\\Http\\Resources\\UserResource::toArray","1"],[100,1,"Listeners\/StripeWebhookListener.php.html#11","App\\Listeners\\StripeWebhookListener::__construct","1"],[100,1,"Listeners\/StripeWebhookListener.php.html#39","App\\Listeners\\StripeWebhookListener::handleSubscriptionDeleted","1"],[100,1,"Mail\/ContactReplyMail.php.html#16","App\\Mail\\ContactReplyMail::__construct","1"],[100,1,"Models\/ActivityLog.php.html#32","App\\Models\\ActivityLog::casts","1"],[100,1,"Models\/ActivityLog.php.html#78","App\\Models\\ActivityLog::details","1"],[100,1,"Models\/ActivityLog.php.html#86","App\\Models\\ActivityLog::user","1"],[100,1,"Models\/AdminLoginOtp.php.html#20","App\\Models\\AdminLoginOtp::casts","1"],[100,1,"Models\/AdminLoginOtp.php.html#28","App\\Models\\AdminLoginOtp::user","1"],[100,1,"Models\/AdminLoginOtp.php.html#33","App\\Models\\AdminLoginOtp::isExpired","1"],[100,1,"Models\/AdminLoginOtp.php.html#38","App\\Models\\AdminLoginOtp::hasExceededAttempts","1"],[100,1,"Models\/Category.php.html#19","App\\Models\\Category::casts","1"],[100,1,"Models\/Category.php.html#26","App\\Models\\Category::products","1"],[100,1,"Models\/ChatLog.php.html#20","App\\Models\\ChatLog::casts","1"],[100,1,"Models\/ContactMessage.php.html#31","App\\Models\\ContactMessage::casts","1"],[100,1,"Models\/ContactMessage.php.html#39","App\\Models\\ContactMessage::user","1"],[100,1,"Models\/ContactMessage.php.html#44","App\\Models\\ContactMessage::replier","1"],[100,1,"Models\/ContactMessage.php.html#49","App\\Models\\ContactMessage::replies","1"],[100,1,"Models\/ContactMessageReply.php.html#20","App\\Models\\ContactMessageReply::casts","1"],[100,1,"Models\/HomepageSlide.php.html#20","App\\Models\\HomepageSlide::casts","1"],[100,1,"Models\/Order.php.html#32","App\\Models\\Order::casts","1"],[100,1,"Models\/Order.php.html#42","App\\Models\\Order::user","1"],[100,1,"Models\/Order.php.html#52","App\\Models\\Order::items","1"],[100,1,"Models\/OrderItem.php.html#19","App\\Models\\OrderItem::casts","1"],[100,1,"Models\/OrderItem.php.html#31","App\\Models\\OrderItem::product","1"],[100,1,"Models\/Product.php.html#31","App\\Models\\Product::casts","1"],[100,2,"Models\/Product.php.html#44","App\\Models\\Product::isPurchasable","2"],[100,1,"Models\/Product.php.html#49","App\\Models\\Product::category","1"],[100,1,"Models\/ProductSubscription.php.html#28","App\\Models\\ProductSubscription::casts","1"],[100,1,"Models\/ProductSubscription.php.html#49","App\\Models\\ProductSubscription::product","1"],[100,1,"Models\/PromoCode.php.html#23","App\\Models\\PromoCode::casts","1"],[100,1,"Models\/User.php.html#43","App\\Models\\User::casts","1"],[100,1,"Models\/User.php.html#62","App\\Models\\User::hasVerifiedEmail","1"],[100,1,"Models\/User.php.html#67","App\\Models\\User::markEmailAsVerified","1"],[100,1,"Models\/User.php.html#76","App\\Models\\User::issueEmailVerificationToken","1"],[100,2,"Models\/User.php.html#90","App\\Models\\User::isEmailVerificationTokenExpired","2"],[100,1,"Models\/User.php.html#109","App\\Models\\User::sendEmailVerificationNotification","1"],[100,1,"Models\/UserAddress.php.html#29","App\\Models\\UserAddress::casts","1"],[100,1,"Notifications\/AdminLoginOtpNotification.php.html#15","App\\Notifications\\AdminLoginOtpNotification::__construct","1"],[100,1,"Notifications\/AdminLoginOtpNotification.php.html#20","App\\Notifications\\AdminLoginOtpNotification::via","1"],[100,1,"Notifications\/EmailVerificationNotification.php.html#14","App\\Notifications\\EmailVerificationNotification::via","1"],[100,1,"Notifications\/OrderConfirmationNotification.php.html#15","App\\Notifications\\OrderConfirmationNotification::__construct","1"],[100,1,"Notifications\/OrderConfirmationNotification.php.html#17","App\\Notifications\\OrderConfirmationNotification::via","1"],[100,1,"Notifications\/ResetPasswordNotification.php.html#14","App\\Notifications\\ResetPasswordNotification::__construct","1"],[100,1,"Providers\/AppServiceProvider.php.html#20","App\\Providers\\AppServiceProvider::boot","1"],[100,1,"Rules\/ValidPromoCode.php.html#11","App\\Rules\\ValidPromoCode::__construct","1"],[100,2,"Services\/AccountDeletionService.php.html#15","App\\Services\\AccountDeletionService::delete","2"],[100,1,"Services\/AccountDeletionService.php.html#100","App\\Services\\AccountDeletionService::deletePersonalData","1"],[100,1,"Services\/AccountDeletionService.php.html#106","App\\Services\\AccountDeletionService::anonymizeContactMessages","1"],[100,1,"Services\/AccountDeletionService.php.html#116","App\\Services\\AccountDeletionService::detachBillingRecords","1"],[100,1,"Services\/AccountDeletionService.php.html#127","App\\Services\\AccountDeletionService::revokeSessions","1"],[100,1,"Services\/AdminLoginOtpService.php.html#14","App\\Services\\AdminLoginOtpService::issue","1"],[100,2,"Services\/AuditLogger.php.html#53","App\\Services\\AuditLogger::logFromRequest","2"],[100,1,"Services\/AuditLogger.php.html#75","App\\Services\\AuditLogger::isAllowedPageView","1"],[100,6,"Services\/AuditLogger.php.html#80","App\\Services\\AuditLogger::shouldLogRequest","6"],[100,7,"Services\/AuditLogger.php.html#105","App\\Services\\AuditLogger::maskIp","7"],[100,1,"Services\/AuditLogger.php.html#133","App\\Services\\AuditLogger::anonymizeForDeletedUser","1"],[100,2,"Services\/AuditLogger.php.html#168","App\\Services\\AuditLogger::resolveContext","2"],[100,5,"Services\/AuditLogger.php.html#375","App\\Services\\AuditLogger::verbAction","5"],[100,4,"Services\/AuditLogger.php.html#388","App\\Services\\AuditLogger::extractTargetId","4"],[100,4,"Services\/OrderFulfillmentService.php.html#41","App\\Services\\OrderFulfillmentService::calculateTotal","4"],[100,2,"Services\/OrderFulfillmentService.php.html#195","App\\Services\\OrderFulfillmentService::applyDiscount","2"],[100,1,"Services\/StripeProductSyncService.php.html#14","App\\Services\\StripeProductSyncService::isConfigured","1"],[100,1,"Support\/PasswordRules.php.html#9","App\\Support\\PasswordRules::required","1"],[100,1,"Support\/PasswordRules.php.html#19","App\\Support\\PasswordRules::optional","1"],[100,1,"Support\/PasswordRules.php.html#29","App\\Support\\PasswordRules::rule","1"]]</script>
+  <script type="text/javascript" defer>
+  const barLabels = [
+    '0%',
+    '0-10%',
+    '10-20%',
+    '20-30%',
+    '30-40%',
+    '40-50%',
+    '50-60%',
+    '60-70%',
+    '70-80%',
+    '80-90%',
+    '90-100%',
+    '100%'
+  ];
+  const barConfig = (name, fullName, values) => ({
+    axis: {
+      x: {
+        type: "category",
+        categories: barLabels,
+      },
+      y: {
+        label: {
+          text: `#${name}`,
+          position: 'outer-top',
+        },
+      },
+    },
+    bindto: `#${name}CoverageDistribution`,
+    data: {
+      columns: [
+        [fullName].concat(values),
+      ],
+      colors: {
+        [fullName]: "rgba(69, 114, 167, 0.75)",
+      },
+      type: "bar",
+    },
+    bar: {
+      width: {
+        ratio: 0.9,
+      },
+    },
+    grid: {
+      focus: {
+        show: false,
+      },
+      x: {
+        show: true,
+      },
+      y: {
+        show: true,
+      },
+    },
+    legend: {
+      show: false,
+    },
+    tooltip: {
+      contents: function (data) {
+        return `<table class="bb-tooltip"><tbody>
+            <tr><th colspan="2">Coverage ${barLabels[data[0].x]}</th></tr>
+            <tr><td class="value">${data[0].value} ${name}</td></tr>
+          </tbody></table>`;
+      },
+      grouped: false,
+    },
+  });
+  bb.generate(
+    barConfig('classes', "Class Coverage", [8,2,1,4,0,1,5,3,7,13,7,42])
+  );
+  bb.generate(
+    barConfig('methods', "Method Coverage", [60,0,2,1,3,2,8,9,7,13,16,135])
+  );
+
+  const scatterConfig = (name, complexityData) => ({
+    axis: {
+      x: {
+        label: {
+          text: 'Code Coverage (in percent)',
+          position: 'outer-right',
+        },
+        tick: {
+          values: [0, 20, 40, 60, 80, 100],
+        },
+      },
+      y: {
+        label: {
+          text: 'Cyclomatic Complexity',
+          position: 'outer-top',
+        },
+        min: 0,
+        padding: {
+          bottom: 0,
+          top: 5,
+        },
+      },
+    },
+    bindto: `#${name}Complexity`,
+    data: {
+      columns: [
+        ["complexity_x"].concat(complexityData.map(d => d[0])),
+        ["complexity"].concat(complexityData.map(d => d[1])),
+      ],
+      onclick: function(data, element) {
+        window.location = complexityData[data.index][2];
+      },
+      type: "scatter",
+      xs: {
+        "complexity": "complexity_x",
+      },
+    },
+    grid: {
+      focus: {
+        show: true,
+        y: true,
+      },
+      x: {
+        show: true,
+      },
+      y: {
+        show: true,
+      },
+    },
+    legend: {
+      show: false,
+    },
+    tooltip: {
+      contents: function (data) {
+        const coverage = Math.round(data[0].x);
+        const complexity = data[0].value;
+        const targetName = complexityData[data[0].index][3];
+        const crap = complexityData[data[0].index][4];
+        return `<table class="bb-tooltip"><tbody>
+            <tr><th colspan="2">${targetName}</th></tr>
+            <tr class="bb-tooltip-name-complexity"><td>Coverage</td><td class="name">${coverage}%</td></tr>
+            <tr class="bb-tooltip-name-complexity"><td>Complexity</td><td class="value">${complexity}</td></tr>
+            <tr class="bb-tooltip-name-complexity"><td>Crap</td><td class="value">${crap}</td></tr>
+          </tbody></table>`;
+      },
+      grouped: false,
+    },
+  });
+  const classComplexityData = JSON.parse(document.getElementById('complexity_class').textContent);
+  bb.generate(
+    scatterConfig("class", classComplexityData)
+  );
+  const methodComplexityData = JSON.parse(document.getElementById('complexity_method').textContent);
+  bb.generate(
+    scatterConfig("method", methodComplexityData),
+  );
+  </script>
+ </body>
+</html>

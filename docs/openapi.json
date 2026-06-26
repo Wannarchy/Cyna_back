@@ -1,0 +1,2361 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "CYNA API",
+        "description": "Documentation API REST CYNA — cybersécurité SaaS",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "/api",
+            "description": "API CYNA"
+        }
+    ],
+    "paths": {
+        "/admin/logs": {
+            "get": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Journal d'activité",
+                "operationId": "GET::/admin/logs::App\\Swagger\\AdminPathsPart1",
+                "parameters": [
+                    {
+                        "name": "actor_type",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "admin",
+                                "user",
+                                "guest"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "admin_id",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "action",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "target_type",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "target_id",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "date",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "format": "date"
+                        }
+                    },
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "per_page",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Logs paginés"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        },
+        "/admin/users": {
+            "get": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Lister les utilisateurs",
+                "operationId": "GET::/admin/users::App\\Swagger\\AdminPathsPart1",
+                "responses": {
+                    "200": {
+                        "description": "Liste des utilisateurs"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        },
+        "/admin/users/{id}": {
+            "get": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Détail d'un utilisateur",
+                "operationId": "GET::/admin/users/{id}::App\\Swagger\\AdminPathsPart1",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Utilisateur trouvé"
+                    },
+                    "404": {
+                        "description": "Utilisateur introuvable"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Modifier un utilisateur",
+                "operationId": "PUT::/admin/users/{id}::App\\Swagger\\AdminPathsPart1",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "prenom": {
+                                        "type": "string"
+                                    },
+                                    "nom": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email"
+                                    },
+                                    "est_actif": {
+                                        "type": "boolean"
+                                    },
+                                    "is_admin": {
+                                        "type": "boolean"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "format": "password"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Utilisateur mis à jour"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Supprimer un utilisateur",
+                "operationId": "DELETE::/admin/users/{id}::App\\Swagger\\AdminPathsPart1",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Utilisateur supprimé"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        },
+        "/admin/users/{id}/bloquer": {
+            "patch": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Bloquer / débloquer un utilisateur",
+                "operationId": "PATCH::/admin/users/{id}/bloquer::App\\Swagger\\AdminPathsPart1",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "bloquer"
+                                ],
+                                "properties": {
+                                    "bloquer": {
+                                        "type": "boolean"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Statut de blocage mis à jour"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        },
+        "/admin/products": {
+            "get": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Lister les produits (admin)",
+                "operationId": "GET::/admin/products::App\\Swagger\\AdminPathsPart1",
+                "responses": {
+                    "200": {
+                        "description": "Tous les produits"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Créer un produit",
+                "operationId": "POST::/admin/products::App\\Swagger\\AdminPathsPart1",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "name",
+                                    "category_id",
+                                    "price_monthly"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "category_id": {
+                                        "type": "integer"
+                                    },
+                                    "price_monthly": {
+                                        "type": "number"
+                                    },
+                                    "price_yearly": {
+                                        "type": "number"
+                                    },
+                                    "description": {
+                                        "type": "string"
+                                    },
+                                    "is_available": {
+                                        "type": "boolean"
+                                    },
+                                    "is_featured": {
+                                        "type": "boolean"
+                                    },
+                                    "requires_shipping": {
+                                        "type": "boolean"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Produit créé"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        },
+        "/admin/products/{id}": {
+            "put": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Modifier un produit",
+                "operationId": "PUT::/admin/products/{id}::App\\Swagger\\AdminPathsPart1",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Produit mis à jour"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Supprimer un produit",
+                "operationId": "DELETE::/admin/products/{id}::App\\Swagger\\AdminPathsPart1",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Produit supprimé"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        },
+        "/admin/categories": {
+            "get": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Lister les catégories (admin)",
+                "operationId": "GET::/admin/categories::App\\Swagger\\AdminPathsPart1",
+                "responses": {
+                    "200": {
+                        "description": "Toutes les catégories"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Créer une catégorie",
+                "operationId": "POST::/admin/categories::App\\Swagger\\AdminPathsPart1",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "name"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "is_active": {
+                                        "type": "boolean"
+                                    },
+                                    "sort_order": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Catégorie créée"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        },
+        "/admin/categories/{id}": {
+            "put": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Modifier une catégorie",
+                "operationId": "PUT::/admin/categories/{id}::App\\Swagger\\AdminPathsPart1",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Catégorie mise à jour"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Supprimer une catégorie",
+                "operationId": "DELETE::/admin/categories/{id}::App\\Swagger\\AdminPathsPart1",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Catégorie supprimée"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        },
+        "/admin/orders": {
+            "get": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Lister les commandes (admin)",
+                "operationId": "GET::/admin/orders::App\\Swagger\\AdminPathsPart2",
+                "responses": {
+                    "200": {
+                        "description": "Toutes les commandes"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        },
+        "/admin/orders/{id}": {
+            "get": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Détail d'une commande (admin)",
+                "operationId": "GET::/admin/orders/{id}::App\\Swagger\\AdminPathsPart2",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Commande trouvée"
+                    },
+                    "404": {
+                        "description": "Commande introuvable"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        },
+        "/admin/orders/{id}/status": {
+            "patch": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Mettre à jour le statut d'une commande",
+                "operationId": "PATCH::/admin/orders/{id}/status::App\\Swagger\\AdminPathsPart2",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "status"
+                                ],
+                                "properties": {
+                                    "status": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Statut mis à jour"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        },
+        "/admin/promo-codes": {
+            "get": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Lister les codes promo",
+                "operationId": "GET::/admin/promo-codes::App\\Swagger\\AdminPathsPart2",
+                "responses": {
+                    "200": {
+                        "description": "Liste des codes promo"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Créer un code promo",
+                "operationId": "POST::/admin/promo-codes::App\\Swagger\\AdminPathsPart2",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "code",
+                                    "type",
+                                    "value"
+                                ],
+                                "properties": {
+                                    "code": {
+                                        "type": "string"
+                                    },
+                                    "type": {
+                                        "type": "string",
+                                        "enum": [
+                                            "fixed",
+                                            "percent"
+                                        ]
+                                    },
+                                    "value": {
+                                        "type": "number"
+                                    },
+                                    "is_active": {
+                                        "type": "boolean"
+                                    },
+                                    "expires_at": {
+                                        "type": "string",
+                                        "format": "date-time"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Code promo créé"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        },
+        "/admin/promo-codes/{id}": {
+            "put": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Modifier un code promo",
+                "operationId": "PUT::/admin/promo-codes/{id}::App\\Swagger\\AdminPathsPart2",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Code promo mis à jour"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Supprimer un code promo",
+                "operationId": "DELETE::/admin/promo-codes/{id}::App\\Swagger\\AdminPathsPart2",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Code promo supprimé"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        },
+        "/admin/homepage/slides": {
+            "put": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Mettre à jour les slides homepage",
+                "operationId": "PUT::/admin/homepage/slides::App\\Swagger\\AdminPathsPart2",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "slides": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object"
+                                        }
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Slides mis à jour"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        },
+        "/admin/homepage/slides/{id}": {
+            "delete": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Supprimer un slide homepage",
+                "operationId": "DELETE::/admin/homepage/slides/{id}::App\\Swagger\\AdminPathsPart2",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Slide supprimé"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        },
+        "/admin/homepage/content": {
+            "put": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Mettre à jour le contenu homepage",
+                "operationId": "PUT::/admin/homepage/content::App\\Swagger\\AdminPathsPart2",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Contenu mis à jour"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        },
+        "/admin/contact-messages": {
+            "get": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Lister les messages de contact",
+                "operationId": "GET::/admin/contact-messages::App\\Swagger\\AdminPathsPart2",
+                "responses": {
+                    "200": {
+                        "description": "Messages de contact"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        },
+        "/admin/contact-messages/{id}/status": {
+            "patch": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Changer le statut d'un message",
+                "operationId": "PATCH::/admin/contact-messages/{id}/status::App\\Swagger\\AdminPathsPart2",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "status"
+                                ],
+                                "properties": {
+                                    "status": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Statut mis à jour"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        },
+        "/admin/contact-messages/{id}/reply": {
+            "post": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Répondre à un message de contact",
+                "operationId": "POST::/admin/contact-messages/{id}/reply::App\\Swagger\\AdminPathsPart2",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "message"
+                                ],
+                                "properties": {
+                                    "message": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Réponse envoyée"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        },
+        "/admin/uploads/image": {
+            "post": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Uploader une image",
+                "operationId": "POST::/admin/uploads/image::App\\Swagger\\AdminPathsPart2",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "image"
+                                ],
+                                "properties": {
+                                    "image": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Image uploadée"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        },
+        "/auth/register": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Inscription",
+                "operationId": "POST::/auth/register::App\\Swagger\\AuthPaths",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "prenom",
+                                    "nom",
+                                    "email",
+                                    "password",
+                                    "password_confirmation"
+                                ],
+                                "properties": {
+                                    "prenom": {
+                                        "type": "string"
+                                    },
+                                    "nom": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "format": "password"
+                                    },
+                                    "password_confirmation": {
+                                        "type": "string",
+                                        "format": "password"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Compte créé, email de vérification envoyé"
+                    },
+                    "422": {
+                        "description": "Erreur de validation"
+                    }
+                }
+            }
+        },
+        "/auth/login": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Connexion",
+                "operationId": "POST::/auth/login::App\\Swagger\\AuthPaths",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "email",
+                                    "password"
+                                ],
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "format": "password"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Token Sanctum ou challenge OTP admin"
+                    },
+                    "401": {
+                        "description": "Identifiants invalides"
+                    },
+                    "403": {
+                        "description": "Compte désactivé"
+                    }
+                }
+            }
+        },
+        "/auth/verify-admin-otp": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Valider le code OTP administrateur",
+                "operationId": "POST::/auth/verify-admin-otp::App\\Swagger\\AuthPaths",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "challenge_token",
+                                    "code"
+                                ],
+                                "properties": {
+                                    "challenge_token": {
+                                        "type": "string"
+                                    },
+                                    "code": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Connexion admin réussie"
+                    },
+                    "422": {
+                        "description": "Code invalide ou expiré"
+                    }
+                }
+            }
+        },
+        "/auth/forgot-password": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Demande de réinitialisation du mot de passe",
+                "operationId": "POST::/auth/forgot-password::App\\Swagger\\AuthPaths",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "email"
+                                ],
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Email envoyé si le compte existe"
+                    }
+                }
+            }
+        },
+        "/auth/reset-password": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Réinitialiser le mot de passe",
+                "operationId": "POST::/auth/reset-password::App\\Swagger\\AuthPaths",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "email",
+                                    "token",
+                                    "password",
+                                    "password_confirmation"
+                                ],
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email"
+                                    },
+                                    "token": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "format": "password"
+                                    },
+                                    "password_confirmation": {
+                                        "type": "string",
+                                        "format": "password"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Mot de passe réinitialisé"
+                    },
+                    "422": {
+                        "description": "Token invalide"
+                    }
+                }
+            }
+        },
+        "/auth/verify-email": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Confirmer l'adresse email",
+                "operationId": "POST::/auth/verify-email::App\\Swagger\\AuthPaths",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "token"
+                                ],
+                                "properties": {
+                                    "id": {
+                                        "type": "integer"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email"
+                                    },
+                                    "token": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Email vérifié"
+                    },
+                    "422": {
+                        "description": "Lien invalide ou expiré"
+                    }
+                }
+            }
+        },
+        "/auth/resend-verification-email": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Renvoyer l'email de vérification (public)",
+                "operationId": "POST::/auth/resend-verification-email::App\\Swagger\\AuthPaths",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email"
+                                    },
+                                    "id": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Email renvoyé si compte non confirmé"
+                    }
+                }
+            }
+        },
+        "/auth/logout": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Déconnexion",
+                "operationId": "POST::/auth/logout::App\\Swagger\\AuthPaths",
+                "responses": {
+                    "200": {
+                        "description": "Déconnexion réussie"
+                    },
+                    "401": {
+                        "description": "Non authentifié"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        },
+        "/auth/resend-verification": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Renvoyer l'email de vérification (connecté)",
+                "operationId": "POST::/auth/resend-verification::App\\Swagger\\AuthPaths",
+                "responses": {
+                    "200": {
+                        "description": "Email renvoyé"
+                    },
+                    "401": {
+                        "description": "Non authentifié"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        },
+        "/orders": {
+            "get": {
+                "tags": [
+                    "Commandes"
+                ],
+                "summary": "Lister mes commandes",
+                "description": "Email vérifié requis.",
+                "operationId": "GET::/orders::App\\Swagger\\CommercePaths",
+                "responses": {
+                    "200": {
+                        "description": "Liste des commandes"
+                    },
+                    "403": {
+                        "description": "Email non vérifié"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Commandes"
+                ],
+                "summary": "Créer une commande",
+                "description": "Email vérifié requis. Paiement via Stripe PaymentMethod.",
+                "operationId": "POST::/orders::App\\Swagger\\CommercePaths",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "billing_name",
+                                    "billing_address",
+                                    "payment_method",
+                                    "items"
+                                ],
+                                "properties": {
+                                    "billing_name": {
+                                        "type": "string"
+                                    },
+                                    "billing_address": {
+                                        "type": "string"
+                                    },
+                                    "shipping_name": {
+                                        "type": "string"
+                                    },
+                                    "shipping_address": {
+                                        "type": "string"
+                                    },
+                                    "payment_method": {
+                                        "description": "ID Stripe PaymentMethod (pm_...)",
+                                        "type": "string"
+                                    },
+                                    "promo_code": {
+                                        "type": "string"
+                                    },
+                                    "items": {
+                                        "type": "array",
+                                        "items": {
+                                            "required": [
+                                                "product_id",
+                                                "cycle"
+                                            ],
+                                            "properties": {
+                                                "product_id": {
+                                                    "type": "integer"
+                                                },
+                                                "cycle": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "monthly",
+                                                        "yearly"
+                                                    ]
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Commande créée"
+                    },
+                    "422": {
+                        "description": "Paiement refusé ou validation échouée"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        },
+        "/orders/{id}": {
+            "get": {
+                "tags": [
+                    "Commandes"
+                ],
+                "summary": "Détail d'une commande",
+                "operationId": "GET::/orders/{id}::App\\Swagger\\CommercePaths",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Commande trouvée"
+                    },
+                    "404": {
+                        "description": "Commande introuvable"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        },
+        "/subscriptions": {
+            "get": {
+                "tags": [
+                    "Abonnements"
+                ],
+                "summary": "Lister mes abonnements",
+                "operationId": "GET::/subscriptions::App\\Swagger\\CommercePaths",
+                "responses": {
+                    "200": {
+                        "description": "Liste des abonnements produits"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        },
+        "/subscriptions/{id}/cancel": {
+            "post": {
+                "tags": [
+                    "Abonnements"
+                ],
+                "summary": "Résilier un abonnement",
+                "operationId": "POST::/subscriptions/{id}/cancel::App\\Swagger\\CommercePaths",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Résiliation programmée"
+                    },
+                    "404": {
+                        "description": "Abonnement introuvable"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        },
+        "/subscriptions/{id}/change-cycle": {
+            "post": {
+                "tags": [
+                    "Abonnements"
+                ],
+                "summary": "Changer le cycle de facturation",
+                "operationId": "POST::/subscriptions/{id}/change-cycle::App\\Swagger\\CommercePaths",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "cycle"
+                                ],
+                                "properties": {
+                                    "cycle": {
+                                        "type": "string",
+                                        "enum": [
+                                            "monthly",
+                                            "yearly"
+                                        ]
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Cycle mis à jour"
+                    },
+                    "404": {
+                        "description": "Abonnement introuvable"
+                    },
+                    "422": {
+                        "description": "Cycle déjà actif ou erreur Stripe"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        },
+        "/payment-methods": {
+            "get": {
+                "tags": [
+                    "Paiement"
+                ],
+                "summary": "Lister mes moyens de paiement",
+                "operationId": "GET::/payment-methods::App\\Swagger\\CommercePaths",
+                "responses": {
+                    "200": {
+                        "description": "Cartes Stripe enregistrées"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Paiement"
+                ],
+                "summary": "Ajouter un moyen de paiement",
+                "operationId": "POST::/payment-methods::App\\Swagger\\CommercePaths",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "payment_method"
+                                ],
+                                "properties": {
+                                    "payment_method": {
+                                        "description": "ID Stripe PaymentMethod",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Carte ajoutée et définie par défaut"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        },
+        "/payment-methods/{id}": {
+            "delete": {
+                "tags": [
+                    "Paiement"
+                ],
+                "summary": "Supprimer un moyen de paiement",
+                "operationId": "DELETE::/payment-methods/{id}::App\\Swagger\\CommercePaths",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Carte supprimée"
+                    },
+                    "404": {
+                        "description": "Moyen de paiement introuvable"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        },
+        "/payment-methods/{id}/default": {
+            "post": {
+                "tags": [
+                    "Paiement"
+                ],
+                "summary": "Définir la carte par défaut",
+                "operationId": "POST::/payment-methods/{id}/default::App\\Swagger\\CommercePaths",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Carte par défaut mise à jour"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        },
+        "/promo-codes/validate": {
+            "post": {
+                "tags": [
+                    "Promo"
+                ],
+                "summary": "Valider un code promo",
+                "operationId": "POST::/promo-codes/validate::App\\Swagger\\CommercePaths",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "code",
+                                    "amount"
+                                ],
+                                "properties": {
+                                    "code": {
+                                        "type": "string"
+                                    },
+                                    "amount": {
+                                        "type": "number",
+                                        "format": "float"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Remise calculée"
+                    },
+                    "404": {
+                        "description": "Code promo introuvable"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        },
+        "/products": {
+            "get": {
+                "tags": [
+                    "Catalogue"
+                ],
+                "summary": "Liste des produits",
+                "operationId": "GET::/products::App\\Swagger\\PublicPaths",
+                "parameters": [
+                    {
+                        "name": "category_id",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "is_featured",
+                        "in": "query",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "per_page",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "maximum": 48
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Liste des produits disponibles"
+                    }
+                }
+            }
+        },
+        "/products/{id}": {
+            "get": {
+                "tags": [
+                    "Catalogue"
+                ],
+                "summary": "Détail d'un produit",
+                "operationId": "GET::/products/{id}::App\\Swagger\\PublicPaths",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Produit trouvé"
+                    },
+                    "404": {
+                        "description": "Produit introuvable"
+                    }
+                }
+            }
+        },
+        "/categories": {
+            "get": {
+                "tags": [
+                    "Catalogue"
+                ],
+                "summary": "Liste des catégories actives",
+                "operationId": "GET::/categories::App\\Swagger\\PublicPaths",
+                "responses": {
+                    "200": {
+                        "description": "Liste des catégories"
+                    }
+                }
+            }
+        },
+        "/homepage": {
+            "get": {
+                "tags": [
+                    "Contenu"
+                ],
+                "summary": "Contenu de la page d'accueil",
+                "operationId": "GET::/homepage::App\\Swagger\\PublicPaths",
+                "responses": {
+                    "200": {
+                        "description": "Slides et contenu éditorial"
+                    }
+                }
+            }
+        },
+        "/billing/config": {
+            "get": {
+                "tags": [
+                    "Billing"
+                ],
+                "summary": "Configuration Stripe publique",
+                "operationId": "GET::/billing/config::App\\Swagger\\PublicPaths",
+                "responses": {
+                    "200": {
+                        "description": "Clé publique Stripe (pk_...)"
+                    }
+                }
+            }
+        },
+        "/contact": {
+            "post": {
+                "tags": [
+                    "Contact"
+                ],
+                "summary": "Envoyer un message de contact",
+                "description": "Auth optionnelle (Sanctum). Invités acceptés.",
+                "operationId": "POST::/contact::App\\Swagger\\PublicPaths",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "email",
+                                    "sujet",
+                                    "message"
+                                ],
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email"
+                                    },
+                                    "sujet": {
+                                        "type": "string"
+                                    },
+                                    "message": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Message enregistré"
+                    },
+                    "422": {
+                        "description": "Erreur de validation"
+                    },
+                    "429": {
+                        "description": "Trop de requêtes (10/min)"
+                    }
+                }
+            }
+        },
+        "/profile": {
+            "get": {
+                "tags": [
+                    "Profil"
+                ],
+                "summary": "Voir mon profil",
+                "operationId": "GET::/profile::App\\Swagger\\UserPaths",
+                "responses": {
+                    "200": {
+                        "description": "Profil utilisateur"
+                    },
+                    "401": {
+                        "description": "Non authentifié"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "Profil"
+                ],
+                "summary": "Mettre à jour mon profil",
+                "operationId": "PUT::/profile::App\\Swagger\\UserPaths",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "prenom": {
+                                        "type": "string"
+                                    },
+                                    "nom": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email"
+                                    },
+                                    "current_password": {
+                                        "type": "string",
+                                        "format": "password"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "format": "password"
+                                    },
+                                    "password_confirmation": {
+                                        "type": "string",
+                                        "format": "password"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Profil mis à jour"
+                    },
+                    "422": {
+                        "description": "Erreur de validation"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Profil"
+                ],
+                "summary": "Supprimer mon compte",
+                "operationId": "DELETE::/profile::App\\Swagger\\UserPaths",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "current_password"
+                                ],
+                                "properties": {
+                                    "current_password": {
+                                        "type": "string",
+                                        "format": "password"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Compte supprimé"
+                    },
+                    "422": {
+                        "description": "Mot de passe incorrect"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        },
+        "/addresses": {
+            "get": {
+                "tags": [
+                    "Adresses"
+                ],
+                "summary": "Lister mes adresses",
+                "operationId": "GET::/addresses::App\\Swagger\\UserPaths",
+                "responses": {
+                    "200": {
+                        "description": "Liste des adresses"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Adresses"
+                ],
+                "summary": "Ajouter une adresse",
+                "operationId": "POST::/addresses::App\\Swagger\\UserPaths",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "nom",
+                                    "prenom",
+                                    "rue",
+                                    "ville",
+                                    "code_postal"
+                                ],
+                                "properties": {
+                                    "nom": {
+                                        "type": "string"
+                                    },
+                                    "prenom": {
+                                        "type": "string"
+                                    },
+                                    "rue": {
+                                        "type": "string"
+                                    },
+                                    "ville": {
+                                        "type": "string"
+                                    },
+                                    "code_postal": {
+                                        "type": "string"
+                                    },
+                                    "pays": {
+                                        "type": "string"
+                                    },
+                                    "usage_type": {
+                                        "type": "string",
+                                        "enum": [
+                                            "billing",
+                                            "shipping",
+                                            "both"
+                                        ]
+                                    },
+                                    "is_default": {
+                                        "type": "boolean"
+                                    },
+                                    "is_default_shipping": {
+                                        "type": "boolean"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Adresse créée"
+                    },
+                    "422": {
+                        "description": "Erreur de validation"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        },
+        "/addresses/{id}": {
+            "put": {
+                "tags": [
+                    "Adresses"
+                ],
+                "summary": "Modifier une adresse",
+                "operationId": "PUT::/addresses/{id}::App\\Swagger\\UserPaths",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "nom": {
+                                        "type": "string"
+                                    },
+                                    "prenom": {
+                                        "type": "string"
+                                    },
+                                    "rue": {
+                                        "type": "string"
+                                    },
+                                    "ville": {
+                                        "type": "string"
+                                    },
+                                    "code_postal": {
+                                        "type": "string"
+                                    },
+                                    "usage_type": {
+                                        "type": "string",
+                                        "enum": [
+                                            "billing",
+                                            "shipping",
+                                            "both"
+                                        ]
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Adresse mise à jour"
+                    },
+                    "404": {
+                        "description": "Adresse introuvable"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Adresses"
+                ],
+                "summary": "Supprimer une adresse",
+                "operationId": "DELETE::/addresses/{id}::App\\Swagger\\UserPaths",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Adresse supprimée"
+                    },
+                    "404": {
+                        "description": "Adresse introuvable"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        },
+        "/chat": {
+            "post": {
+                "tags": [
+                    "Chat"
+                ],
+                "summary": "Envoyer un message au chatbot",
+                "operationId": "POST::/chat::App\\Swagger\\UserPaths",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "user_message"
+                                ],
+                                "properties": {
+                                    "user_message": {
+                                        "type": "string",
+                                        "maxLength": 2000
+                                    },
+                                    "session_id": {
+                                        "type": "string",
+                                        "maxLength": 100
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Réponse du bot"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        },
+        "/activity/page-view": {
+            "post": {
+                "tags": [
+                    "Activité"
+                ],
+                "summary": "Enregistrer une vue de page",
+                "operationId": "POST::/activity/page-view::App\\Swagger\\UserPaths",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "page"
+                                ],
+                                "properties": {
+                                    "page": {
+                                        "type": "string",
+                                        "maxLength": 120
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Journalisé ou ignoré"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "sanctum": {
+                "type": "http",
+                "description": "Token Bearer Sanctum (Authorization: Bearer {token})",
+                "bearerFormat": "Sanctum",
+                "scheme": "bearer"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Auth",
+            "description": "Authentification"
+        },
+        {
+            "name": "Catalogue",
+            "description": "Produits et catégories (public)"
+        },
+        {
+            "name": "Contenu",
+            "description": "Page d'accueil"
+        },
+        {
+            "name": "Billing",
+            "description": "Configuration paiement"
+        },
+        {
+            "name": "Contact",
+            "description": "Formulaire de contact"
+        },
+        {
+            "name": "Profil",
+            "description": "Profil utilisateur"
+        },
+        {
+            "name": "Adresses",
+            "description": "Adresses facturation / livraison"
+        },
+        {
+            "name": "Chat",
+            "description": "Chatbot"
+        },
+        {
+            "name": "Activité",
+            "description": "Journalisation des pages vues"
+        },
+        {
+            "name": "Commandes",
+            "description": "Commandes (email vérifié requis)"
+        },
+        {
+            "name": "Abonnements",
+            "description": "Abonnements produits"
+        },
+        {
+            "name": "Paiement",
+            "description": "Moyens de paiement Stripe"
+        },
+        {
+            "name": "Promo",
+            "description": "Codes promotionnels"
+        },
+        {
+            "name": "Admin",
+            "description": "Back-office administrateur"
+        }
+    ]
+}
