@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Support\CloudinaryPath;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -13,6 +14,7 @@ class CategoryResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'image_path' => $this->image_path,
+            'image_url' => CloudinaryPath::deliveryUrl($this->image_path),
             'sort_order' => $this->sort_order,
             'is_active' => (bool) $this->is_active,
             'products_count' => $this->when(

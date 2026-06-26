@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Support\CloudinaryPath;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -16,6 +17,7 @@ class ProductResource extends JsonResource
             'description' => $this->description,
             'technical_specs' => $this->technical_specs ?? [],
             'image_path' => $this->image_path,
+            'image_url' => CloudinaryPath::deliveryUrl($this->image_path),
             'price_monthly' => $this->price_monthly,
             'price_yearly' => $this->price_yearly,
             'stripe_product_id' => $this->when($request->user()?->is_admin, $this->stripe_product_id),

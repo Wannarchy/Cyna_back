@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Support\CloudinaryPath;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 
 class HomepageSlide extends Model
@@ -22,5 +24,12 @@ class HomepageSlide extends Model
         return [
             'is_active' => 'boolean',
         ];
+    }
+
+    protected function imagePath(): Attribute
+    {
+        return Attribute::make(
+            set: fn (?string $value) => CloudinaryPath::normalizeForStorage($value),
+        );
     }
 }

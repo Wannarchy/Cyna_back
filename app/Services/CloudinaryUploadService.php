@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Support\CloudinaryPath;
 use Cloudinary\Api\Upload\UploadApi;
 use Cloudinary\Configuration\Configuration;
 use Illuminate\Http\UploadedFile;
@@ -44,9 +45,11 @@ class CloudinaryUploadService
             'overwrite' => false,
         ]);
 
+        $publicId = (string) ($result['public_id'] ?? '');
+
         return [
-            'url' => (string) ($result['secure_url'] ?? $result['url'] ?? ''),
-            'public_id' => (string) ($result['public_id'] ?? ''),
+            'public_id' => $publicId,
+            'url' => CloudinaryPath::deliveryUrl($publicId) ?? (string) ($result['secure_url'] ?? $result['url'] ?? ''),
             'width' => (int) ($result['width'] ?? 0),
             'height' => (int) ($result['height'] ?? 0),
         ];
