@@ -13,6 +13,8 @@ opcache.memory_consumption=128\n\
 opcache.max_accelerated_files=10000\n\
 opcache.validate_timestamps=0" > /usr/local/etc/php/conf.d/opcache.ini
 
+COPY docker/php-upload.ini /usr/local/etc/php/conf.d/99-upload.ini
+
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 WORKDIR /app
