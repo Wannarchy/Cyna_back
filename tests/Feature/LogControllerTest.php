@@ -67,4 +67,49 @@ class LogControllerTest extends TestCase
 
         $this->getJson('/api/admin/logs')->assertForbidden();
     }
+
+    public function test_admin_can_filter_logs_by_action_date_and_search(): void
+    {
+        $admin = $this->actingAsAdmin();
+        $user = $this->createUser(['email' => 'audit-filter@example.com', 'prenom' => 'Audit', 'nom' => 'Filter']);
+
+        ActivityLog::create([
+            'actor_type' => ActivityLog::ACTOR_USER,
+            'user_id' => $user->id,
+            'action' => 'order.create',
+            'target_type' => 'Order',
+            'target_id' => 42,
+            'details' => 'POST',
+            'created_at' => '2026-06-15 10:00:00',
+        ]);
+
+        ActivityLog::create([
+            'actor_type' => ActivityLog::ACTOR_ADMIN,
+            'user_id' => $admin->id,
+            'action' => 'product.create',
+            'created_at' => '2026-06-16 10:00:00',
+        ]);
+
+        $this->getJson('/api/admin/logs?action=order.create')
+            ->assertOk()
+            ->assertJsonCount(1, 'data.data')
+            ->assertJsonPath('data.data.0.action', 'order.create');
+
+        $this->getJson('/api/admin/logs?date=2026-06-15')
+            ->assertOk()
+            ->assertJsonCount(1, 'data.data');
+
+        $this->getJson('/api/admin/logs?q=audit-filter@example.com')
+            ->assertOk()
+            ->assertJsonCount(1, 'data.data');
+
+        $this->getJson('/api/admin/logs?q=42')
+            ->assertOk()
+            ->assertJsonCount(1, 'data.data');
+
+        $this->getJson('/api/admin/logs?admin_id='.$admin->id)
+            ->assertOk()
+            ->assertJsonCount(1, 'data.data')
+            ->assertJsonPath('data.data.0.action', 'product.create');
+    }
 }

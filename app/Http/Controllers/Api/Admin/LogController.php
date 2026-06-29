@@ -21,43 +21,51 @@ class LogController extends Controller
             }
         }
 
-        if ($request->filled('admin_id')) {
+        if ($request->filled('admin_id') && $request->integer('admin_id') > 0) {
             $query->where('user_id', $request->integer('admin_id'))
                 ->where('actor_type', ActivityLog::ACTOR_ADMIN);
-        }
-
-        if ($request->filled('user_id')) {
+        } elseif ($request->filled('user_id') && $request->integer('user_id') > 0) {
             $query->where('user_id', $request->integer('user_id'));
         }
 
         if ($request->filled('action')) {
-            $query->where('action', $request->string('action'));
+            $query->where('action', $request->string('action')->toString());
         }
 
         if ($request->filled('target_type')) {
-            $query->where('target_type', $request->string('target_type'));
+            $query->where('target_type', $request->string('target_type')->toString());
         }
 
-        if ($request->filled('target_id')) {
+        if ($request->filled('target_id') && $request->integer('target_id') > 0) {
             $query->where('target_id', $request->integer('target_id'));
         }
 
         if ($request->filled('date')) {
-            $query->whereDate('created_at', $request->string('date'));
+            $query->whereDate('created_at', $request->string('date')->toString());
         }
 
         if ($request->filled('q')) {
-            $term = '%'.$request->string('q').'%';
-            $query->where(function ($builder) use ($term) {
+            $term = '%'.$request->string('q')->toString().'%';
+            $numericId = ctype_digit(ltrim($request->string('q')->toString(), '#'))
+                ? (int) ltrim($request->string('q')->toString(), '#')
+                : null;
+
+            $query->where(function ($builder) use ($term, $numericId) {
                 $builder->where('action', 'like', $term)
                     ->orWhere('target_type', 'like', $term)
                     ->orWhere('ip', 'like', $term)
-                    ->orWhereRaw('CAST(details AS TEXT) LIKE ?', [$term])
-                    ->orWhereHas('user', function ($userQuery) use ($term) {
-                        $userQuery->where('email', 'like', $term)
-                            ->orWhere('prenom', 'like', $term)
-                            ->orWhere('nom', 'like', $term);
-                    });
+                    ->orWhere('details', 'like', $term);
+
+                if ($numericId !== null && $numericId > 0) {
+                    $builder->orWhere('user_id', $numericId)
+                        ->orWhere('target_id', $numericId);
+                }
+
+                $builder->orWhereHas('user', function ($userQuery) use ($term) {
+                    $userQuery->where('email', 'like', $term)
+                        ->orWhere('prenom', 'like', $term)
+                        ->orWhere('nom', 'like', $term);
+                });
             });
         }
 
