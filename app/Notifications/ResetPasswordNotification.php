@@ -21,12 +21,15 @@ class ResetPasswordNotification extends Notification implements ShouldQueue
     public function toMail(object $notifiable): MailMessage
     {
         $expireMinutes = config('auth.passwords.'.config('auth.defaults.passwords').'.expire', 60);
+        $baseUrl = rtrim((string) config('cyna.frontend_url'), '/');
+        $resetUrl = $baseUrl.'/reinitialiser_mot_de_passe.php?email='.urlencode($notifiable->email).'&token='.urlencode($this->token);
 
         return (new MailMessage)
             ->subject('Réinitialisation de votre mot de passe — CYNA')
+            ->greeting('Bonjour '.$notifiable->prenom.' !')
             ->line('Vous recevez cet email suite à une demande de réinitialisation de mot de passe.')
-            ->line('Token de réinitialisation : **'.$this->token.'**')
-            ->line('Ce token expire dans '.$expireMinutes.' minutes.')
+            ->action('Réinitialiser mon mot de passe', $resetUrl)
+            ->line('Ce lien expire dans '.$expireMinutes.' minutes.')
             ->line('Si vous n\'avez pas demandé de réinitialisation, ignorez cet email.');
     }
 }
