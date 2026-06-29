@@ -108,6 +108,7 @@ Route::middleware([LogAudit::class])->group(function () {
         Route::put('/promo-codes/{id}', [AdminPromoCodeController::class, 'update']);
         Route::delete('/promo-codes/{id}', [AdminPromoCodeController::class, 'destroy']);
 
+        Route::get('/homepage/slides', [AdminHomepageController::class, 'indexSlides']);
         Route::put('/homepage/slides', [AdminHomepageController::class, 'updateSlides']);
         Route::delete('/homepage/slides/{id}', [AdminHomepageController::class, 'destroySlide']);
         Route::put('/homepage/content', [AdminHomepageController::class, 'updateContent']);

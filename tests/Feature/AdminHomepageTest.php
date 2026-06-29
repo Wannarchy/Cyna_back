@@ -11,6 +11,30 @@ class AdminHomepageTest extends TestCase
 {
     use CreatesUsers;
 
+    public function test_admin_can_list_all_homepage_slides(): void
+    {
+        $this->actingAsAdmin();
+
+        HomepageSlide::create([
+            'title' => 'Active slide',
+            'sort_order' => 1,
+            'is_active' => true,
+            'image_path' => 'cyna/slides/test-slide',
+        ]);
+        HomepageSlide::create([
+            'title' => 'Inactive slide',
+            'sort_order' => 2,
+            'is_active' => false,
+        ]);
+
+        $this->getJson('/api/admin/homepage/slides')
+            ->assertOk()
+            ->assertJsonCount(2, 'data')
+            ->assertJsonPath('data.0.title', 'Active slide')
+            ->assertJsonPath('data.1.is_active', false)
+            ->assertJsonStructure(['data' => [['id', 'title', 'image_path', 'image_url']]]);
+    }
+
     public function test_admin_can_create_update_and_delete_homepage_slide(): void
     {
         $this->actingAsAdmin();

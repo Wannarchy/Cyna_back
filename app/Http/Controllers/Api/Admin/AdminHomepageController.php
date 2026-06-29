@@ -10,6 +10,16 @@ use Illuminate\Http\Request;
 
 class AdminHomepageController extends Controller
 {
+    public function indexSlides(): JsonResponse
+    {
+        $slides = HomepageSlide::query()
+            ->orderBy('sort_order')
+            ->orderBy('id')
+            ->get();
+
+        return response()->json(['data' => $slides]);
+    }
+
     public function updateSlides(Request $request): JsonResponse
     {
         $validated = $request->validate([

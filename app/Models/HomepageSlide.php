@@ -10,6 +10,10 @@ class HomepageSlide extends Model
 {
     public $timestamps = false;
 
+    protected $appends = [
+        'image_url',
+    ];
+
     protected $fillable = [
         'title',
         'subtitle',
@@ -30,6 +34,13 @@ class HomepageSlide extends Model
     {
         return Attribute::make(
             set: fn (?string $value) => CloudinaryPath::normalizeForStorage($value),
+        );
+    }
+
+    protected function imageUrl(): Attribute
+    {
+        return Attribute::make(
+            get: fn () => CloudinaryPath::deliveryUrl($this->image_path),
         );
     }
 }

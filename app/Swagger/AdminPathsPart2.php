@@ -88,6 +88,13 @@ use OpenApi\Attributes as OA;
     ],
     responses: [new OA\Response(response: 200, description: 'Code promo supprimé')]
 )]
+#[OA\Get(
+    path: '/admin/homepage/slides',
+    summary: 'Lister toutes les slides homepage (admin)',
+    tags: ['Admin'],
+    security: [['sanctum' => []]],
+    responses: [new OA\Response(response: 200, description: 'Slides actives et inactives')]
+)]
 #[OA\Put(
     path: '/admin/homepage/slides',
     summary: 'Mettre à jour les slides homepage',
