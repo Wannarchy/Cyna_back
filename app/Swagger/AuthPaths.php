@@ -85,9 +85,9 @@ use OpenApi\Attributes as OA;
     requestBody: new OA\RequestBody(
         required: true,
         content: new OA\JsonContent(
-            required: ['email', 'token', 'password', 'password_confirmation'],
+            required: ['token', 'password', 'password_confirmation'],
             properties: [
-                new OA\Property(property: 'email', type: 'string', format: 'email'),
+                new OA\Property(property: 'email', type: 'string', format: 'email', description: 'Optionnel si le token seul est fourni'),
                 new OA\Property(property: 'token', type: 'string'),
                 new OA\Property(property: 'password', type: 'string', format: 'password'),
                 new OA\Property(property: 'password_confirmation', type: 'string', format: 'password'),

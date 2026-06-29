@@ -139,13 +139,36 @@ class AuthController extends Controller
     public function resetPassword(Request $request): JsonResponse
     {
         $request->validate([
-            'email' => ['required', 'email'],
+            'email' => ['nullable', 'email'],
             'token' => ['required', 'string'],
             'password' => PasswordRules::required(),
         ]);
 
+        $email = $request->input('email');
+
+        if (! $email) {
+            $user = User::query()
+                ->whereNotNull('token_reinitialisation')
+                ->where('token_reinitialisation', $request->string('token'))
+                ->where('expiration_token', '>', now())
+                ->first();
+
+            if (! $user) {
+                return response()->json([
+                    'message' => 'Ce lien de réinitialisation est invalide ou a expiré.',
+                ], 422);
+            }
+
+            $email = $user->email;
+        }
+
         $status = Password::reset(
-            $request->only('email', 'password', 'password_confirmation', 'token'),
+            [
+                'email' => $email,
+                'password' => $request->password,
+                'password_confirmation' => $request->password_confirmation,
+                'token' => $request->token,
+            ],
             function (User $user, string $password) {
                 $user->forceFill([
                     'mot_de_passe' => Hash::make($password),

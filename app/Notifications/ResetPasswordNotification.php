@@ -22,7 +22,7 @@ class ResetPasswordNotification extends Notification implements ShouldQueue
     {
         $expireMinutes = config('auth.passwords.'.config('auth.defaults.passwords').'.expire', 60);
         $baseUrl = rtrim((string) config('cyna.frontend_url'), '/');
-        $resetUrl = $baseUrl.'/reinitialiser_mot_de_passe.php?email='.urlencode($notifiable->email).'&token='.urlencode($this->token);
+        $resetUrl = $baseUrl.'/reinitialiser_mot_de_passe.php?token='.urlencode($this->token);
 
         return (new MailMessage)
             ->subject('Réinitialisation de votre mot de passe — CYNA')
